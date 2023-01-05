@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+body{background-color: #F3F3F3;}
+
+.logo {
+    width: 300px;
+    margin-top: -50px;
+    pointer-events: none;
+}
+
+.myaccount{
+    float: right;
+    color: #fff;
+    margin-top: 20px;
+}
+
+.enterimg {
+    width: 50px;
+    float: right;
+    margin-top: 5px;
+}
+
+.title-avalquen {
+    margin-top: 30px;
+    text-align: center;
+}
+
+
+
+#footer {
+    text-align: center;
+    color: #000;
+}

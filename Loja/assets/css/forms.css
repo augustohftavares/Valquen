@@ -1,0 +1,63 @@
+/*
+ * SUPPORT FORM
+*/
+
+.support-title {
+	text-align: center;
+}
+
+.div-support {
+  	border-radius: 5px;
+  	margin: auto;
+  	width: 60%;
+  	height: 400px;
+  	padding: 20px;
+  	margin-top: 30px;
+  	background-color: #E5E4E2;
+  	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.support-form {
+	width: 60%;
+	margin: auto;
+	margin-top: 40px;
+}
+
+.input-support {
+	width: 100%;
+  	padding: 12px 20px;
+  	margin: 8px 0;
+  	display: inline-block;
+  	border: 1px solid #ccc;
+  	border-radius: 4px;
+  	box-sizing: border-box;
+}
+
+.button-submit {
+	width: 100%;
+  	background-color: #82AAE3;
+  	color: white;
+  	padding: 14px 20px;
+  	margin: 8px 0;
+  	border: none;
+  	border-radius: 4px;
+  	cursor: pointer;
+}
+
+.button-submit:hover {background-color: #91D8E4;}
+
+.div-error-msg {
+	margin-top: 30px;
+}
+
+.alert, .alert-danger {
+    width: 14%;
+    margin: auto;
+    color: #000;
+    border-bottom: 2px solid #FF0000;
+
+}
+
+/*
+ * OTHER FORM
+*/
