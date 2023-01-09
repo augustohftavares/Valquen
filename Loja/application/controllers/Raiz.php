@@ -10,14 +10,11 @@ class Raiz extends CI_Controller {
 
 	}//end constructor()
 
-	// .../index.php/raiz/index
-	// .../index.php/raiz
 	public function index() {
-		// Passagem entre controller e view
 		$data['title'] = "Valquen - Loja Online";
 		$data['description'] = "description home page";
 		$this->load->view('home', $data);
-	}//end index()
+	}
 
 	public function promocoes() {
 		$data['title'] = "Valquen - Promoções";
@@ -26,7 +23,6 @@ class Raiz extends CI_Controller {
 
 	public function avalquen() {
 		$data['title'] = "Valquen - Sobre nós";
-
 		$this->load->view('avalquen', $data);
 	}
 }
