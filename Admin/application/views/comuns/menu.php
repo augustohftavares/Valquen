@@ -1,8 +1,6 @@
 <div class="navcontainer">
 	<nav class="nav">
 		<div class="nav-upper-options">
-
-
      		<a href="<?php echo base_url()?>">
 				<div class="nav-option option1">
 					<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"class="nav-img"alt="dashboard">

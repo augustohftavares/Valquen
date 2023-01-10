@@ -4,11 +4,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Produtos extends CI_Controller {
 
 	function __construct() {
-
 		parent::__construct();
 		$this->load->helper('url');
-
-	}//end constructor()
+		$this->load->model('produtos_model');
+	}
 
 	public function index() {
 		$data['title'] = "Valquen - Produtos";
@@ -17,7 +16,82 @@ class Produtos extends CI_Controller {
 
 	public function lista_produtos() {
 		$data['title'] = "Valquen - Lista de produtos";
-		$this->load->view('Produtos/lista', $data);
+		$produtos =  $this->produtos_model->GetAll('title');
+		$data['produtos'] = $this->produtos_model->Modelar($produtos);
+
+		$this->load->view('Produtos/lista',$data);
+	}
+
+	public function Edit() {
+
+		$id = $this->uri->segment(2);
+
+		if(is_null($id))
+			redirect('Produtos/lista', 'refresh');
+
+		$data['produtos'] = $this->produtos_model->GetById($id);
+		$this->load->view('Produtos/editar', $data);
+
+	}//end Edit()
+
+	public function Delete() {
+		$id = $this->uri->segment(2);
+
+		if(is_null($id))
+			redirect('produtos', 'refresh');
+
+		$status = $this->produtos_model->Delete($id);
+
+		if($status) {
+			echo ('<script type="text/javascript">validateForm();</script>');
+		}
+		else
+			$this->session->set_flashdata('error', '<p>Erro ao tentar eliminar este contato. </p>');
+
+		redirect('produtos', 'refresh');
+	}
+
+	public function Update() {
+
+		$validacao = self::Validation('update');
+
+		if($validacao) {
+
+			$produtos = $this->input->post();
+			$status = $this->produtos_model->Update($produtos['id'], $produtos);
+
+			if(!$status) {
+				$this->session->set_flashdata('error', 'Não foi possível atualizar o produto.');
+			} else {
+				$this->session->set_flashdata('success', 'Produto atualizado com sucesso.');
+				redirect('Produtos/lista_produtos', 'refresh');
+			}
+		} else {
+			$this->session->set_flashdata('formError', '<script>formError();</script>');
+
+		}
+	}
+
+	private function Validation($operacao = 'insert'){
+
+		switch($operacao){
+			case 'update':
+			case 'insert':
+				$rules['title'] = array('trim', 'required', 'min_length[3]');
+				$rules['details'] = array('trim', 'required', 'min_length[10]');
+				$rules['price'] = array('trim', 'required', 'numeric');
+				break;
+			default:
+				break;
+
+
+		}//end switch
+
+		$this->form_validation->set_rules('title', 'Title', $rules['title']);
+		$this->form_validation->set_rules('details', 'Details', $rules['details']);
+		$this->form_validation->set_rules('price', 'Price', $rules['price']);
+
+		return $this->form_validation->run();
 	}
 
 }

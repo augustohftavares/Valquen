@@ -63,3 +63,5 @@ $route['index'] = "Dashboard/index";
  */
 $route['produtos'] = "Produtos/index";
 $route['lista'] = "Produtos/lista_produtos";
+$route['edit/(:num)'] = "Produtos/Edit/$1";
+$route['delete/(:num)'] = "Produtos/Delete/$1";

@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<link href="<?php echo base_url("assets/css/index.css") ?>" rel="stylesheet" />
 		<link href="<?php echo base_url("assets/css/responsive.css") ?>" rel="stylesheet" />
 
-		<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-		<script src="<?php echo base_url("assets/js/index.js")?>"></script>
-
+		<script type="text/javascript" src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+		<script type="text/javascript" src="<?php echo base_url("assets/js/index.js")?>"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 	</head>
