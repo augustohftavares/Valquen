@@ -6,23 +6,25 @@ $this->load->view('comuns/header');
 		<?php
             $this->load->view('comuns/menu_header');
         ?>
+
 		<div class="main-container">
 			<?php
                 $this->load->view('comuns/menu');
             ?>
             
-            <!--edit form error alert -->
-            <?php if($this->session->flashdata('formError')) ?>
-
-
             <div class="main">
-
             	<div class="report-container">
-
 
                     <div class="report-header">
                         <h1 class="recent-Articles">Lista de todos os produtos</h1>
+                        <button class="view" onclick="location.href='<?php echo base_url("add") ?>'">Adicionar</button>
                     </div>
+
+                    <?php 
+                        if($this->session->flashdata('success') == TRUE) 
+                            echo $this->session->flashdata('success');
+
+                    ?>
      
                     <table id="produtos">
                         <thead>
@@ -51,7 +53,7 @@ $this->load->view('comuns/header');
                                         <td><?php ?></td>
                                         <td><?php echo $row['title'] ?></td>
                                         <td><?php echo $row['details'] ?></td>
-                                        <td class="t-op-nextlvl lavel-tag"><?php echo $row['price'] ?>€</td>
+                                        <td class="t-op-nextlvl lavel-tag"><?php echo $row['price'] ?> EUR</td>
                                         <td>
                                             <a href="<?php echo $row['edit_url'] ?>">[Editar]</a>
                                             <a href="<?php echo $row['del_url'] ?>">[Eliminar]</a>

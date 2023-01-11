@@ -30,7 +30,7 @@ $this->load->view('comuns/header');
                         </div>
                     </a>
 
-                    <a href="<?php echo base_url("insert") ?>">
+                    <a href="<?php echo base_url("add") ?>">
                         <div class="box box2">
                             <div class="text">
                                 <h2 class="topic">Adicionar produto</h2>

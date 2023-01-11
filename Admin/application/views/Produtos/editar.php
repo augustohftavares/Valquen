@@ -17,7 +17,7 @@ $this->load->view('comuns/header');
             	<div class="report-container">
 
             		<div class="report-header">
-                        <h1 class="recent-Articles">Editar produto -> <?php echo $produtos['title']?></h1>
+                        <h1 class="recent-Articles">Editar produto</h1>
                     </div>
 
                     <form method="post" action="<?php echo base_url('Produtos/update') ?>" enctype="multipart/form-data">

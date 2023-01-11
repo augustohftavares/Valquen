@@ -274,6 +274,10 @@ letter-spacing: 3px;
 	cursor: pointer;
 }
 
+.view:hover{
+	background-color: #2452A3;
+}
+
 .report-body {
 	max-width: 1160px;
 	overflow-x: auto;
@@ -346,5 +350,5 @@ letter-spacing: 3px;
 }
 
 .input-submit:hover {
-	background-color: lightgreen;
+	background-color: #2452A3;
 }

@@ -22,6 +22,53 @@ class Produtos extends CI_Controller {
 		$this->load->view('Produtos/lista',$data);
 	}
 
+	public function add() {
+		$data['title'] = "Valquen - Adicionar Produto";
+		$produtos =  $this->produtos_model->GetAll('title');
+		$data['produtos'] = $this->produtos_model->Modelar($produtos);
+
+		$this->load->view('Produtos/add',$data);
+	}
+
+	/*
+	 *
+	 *
+	 */
+	public function Save(){
+
+		$produtos = $this->produtos_model->GetAll('title');
+		$data['produtos'] = $this->produtos_model->Modelar($produtos);
+		$validacao = self::Validation();
+
+		if($validacao){
+
+			$produto = $this->input->post();
+			$status = $this->produtos_model->Insert($produto);
+
+			if(!$status)
+				$this->session->set_flashdata('error', 'Não foi possível inserir o contato.');
+			 else{
+
+				$this->session->set_flashdata('success', '<script>productAddSuccess();</script>');
+				redirect('lista', 'refresh');
+
+			}//end else
+
+		} else {
+
+			// caso dê erro
+			// criar classe para validar todos os formulários
+			$this->session->set_flashdata('error',validation_errors('<p style="color: red;">* ','</p>'));
+
+		}//end else
+
+		$this->load->view('Produtos/add',$data);
+
+	}
+	/*
+	 *
+	 *
+	 */
 	public function Edit() {
 
 		$id = $this->uri->segment(2);
@@ -34,6 +81,10 @@ class Produtos extends CI_Controller {
 
 	}//end Edit()
 
+	/*
+	 *
+	 *
+	 */
 	public function Delete() {
 		$id = $this->uri->segment(2);
 
@@ -43,14 +94,18 @@ class Produtos extends CI_Controller {
 		$status = $this->produtos_model->Delete($id);
 
 		if($status) {
-			echo ('<script type="text/javascript">validateForm();</script>');
+			$this->session->set_flashdata('error', '<p>Erro ao tentar eliminar este contato. </p>');
 		}
 		else
 			$this->session->set_flashdata('error', '<p>Erro ao tentar eliminar este contato. </p>');
 
-		redirect('produtos', 'refresh');
+		redirect('lista', 'refresh');
 	}
 
+	/*
+	 *
+	 *
+	 */
 	public function Update() {
 
 		$validacao = self::Validation('update');
@@ -64,33 +119,35 @@ class Produtos extends CI_Controller {
 				$this->session->set_flashdata('error', 'Não foi possível atualizar o produto.');
 			} else {
 				$this->session->set_flashdata('success', 'Produto atualizado com sucesso.');
-				redirect('Produtos/lista_produtos', 'refresh');
+				redirect('lista', 'refresh');
 			}
-		} else {
-			$this->session->set_flashdata('formError', '<script>formError();</script>');
-
 		}
+
 	}
 
+
+	/*
+	 *
+	 *
+	 */
 	private function Validation($operacao = 'insert'){
 
 		switch($operacao){
+			case 'save':
 			case 'update':
 			case 'insert':
 				$rules['title'] = array('trim', 'required', 'min_length[3]');
-				$rules['details'] = array('trim', 'required', 'min_length[10]');
 				$rules['price'] = array('trim', 'required', 'numeric');
+				$rules['details'] = array('trim', 'required', 'min_length[10]');
 				break;
 			default:
 				break;
+		}
 
-
-		}//end switch
-
-		$this->form_validation->set_rules('title', 'Title', $rules['title']);
-		$this->form_validation->set_rules('details', 'Details', $rules['details']);
-		$this->form_validation->set_rules('price', 'Price', $rules['price']);
-
+		$this->form_validation->set_rules('title', 'Título', $rules['title']);
+		$this->form_validation->set_rules('price', 'Preço', $rules['price']);
+		$this->form_validation->set_rules('details', 'Detalhes', $rules['details']);
+		
 		return $this->form_validation->run();
 	}
 
