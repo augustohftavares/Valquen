@@ -65,5 +65,6 @@ $route['produtos'] = "Produtos/index";
 $route['lista'] = "Produtos/lista_produtos";
 $route['add'] = "Produtos/Add";
 $route['save'] = "Produtos/Save";
+$route['update'] = "Produtos/Update";
 $route['edit/(:num)'] = "Produtos/Edit/$1";
 $route['delete/(:num)'] = "Produtos/Delete/$1";

@@ -1,11 +1,10 @@
-/*var menuicn = document.querySelector(".menuicn");
+var menuicn = document.querySelector(".menuicn");
 var nav = document.querySelector(".navcontainer");
 
-
 menuicn.addEventListener('click', function() {
-	nav.classList.toggle("navclose")
+	nav.classList.toggle("navclose");
 })
-*/
+
 
 
 /*
@@ -16,7 +15,7 @@ function productAddSuccess() {
   		position: 'top-end',
   		icon: 'success',
   		title: 'Sucesso',
-  		text: 'O produto foi inserido na base de dados com sucesso.',
+  		text: 'O produto foi adicionado com sucesso.',
   		showConfirmButton: false,
   		timer: 2000,
   		timerProgressBar: true
@@ -34,3 +33,20 @@ function productAddError() {
   		timerProgressBar: true
 	})
 }
+
+function productUpdatedSuccess() {
+	Swal.fire({
+  		position: 'top-end',
+  		icon: 'success',
+  		title: 'Sucesso',
+  		text: 'O produto foi atualizado com sucesso.',
+  		showConfirmButton: false,
+  		timer: 2000,
+  		timerProgressBar: true
+	})
+}
+
+
+/*
+ * USERS ALERTS
+ */

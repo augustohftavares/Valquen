@@ -23,7 +23,6 @@ $this->load->view('comuns/header');
                     <?php 
                         if($this->session->flashdata('success') == TRUE) 
                             echo $this->session->flashdata('success');
-
                     ?>
      
                     <table id="produtos">
@@ -33,7 +32,7 @@ $this->load->view('comuns/header');
                                 <th>Título</th>
                                 <th>Detalhes</th>
                                 <th>Preço</th>
-                                <th></th>
+                                <th style="text-align: right;">Ações</th>
                             </tr>
                         </thead>
 
@@ -54,9 +53,9 @@ $this->load->view('comuns/header');
                                         <td><?php echo $row['title'] ?></td>
                                         <td><?php echo $row['details'] ?></td>
                                         <td class="t-op-nextlvl lavel-tag"><?php echo $row['price'] ?> EUR</td>
-                                        <td>
-                                            <a href="<?php echo $row['edit_url'] ?>">[Editar]</a>
-                                            <a href="<?php echo $row['del_url'] ?>">[Eliminar]</a>
+                                        <td style="text-align: right;">
+                                            <a href="<?php echo $row['edit_url'] ?>">Editar</a>
+                                            <a href="<?php echo $row['del_url'] ?>" onclick="return confirm('Pretendes mesmo eliminar este produto ?');">Eliminar</a>
                                         </td>
                                     </tr>
 

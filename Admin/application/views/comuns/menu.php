@@ -1,4 +1,4 @@
-<div class="navcontainer">
+<div class="navcontainer" id="navcontainer">
 	<nav class="nav">
 		<div class="nav-upper-options">
      		<a href="<?php echo base_url()?>">

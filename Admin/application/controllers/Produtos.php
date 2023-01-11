@@ -30,6 +30,18 @@ class Produtos extends CI_Controller {
 		$this->load->view('Produtos/add',$data);
 	}
 
+	public function Edit() {
+
+		$id = $this->uri->segment(2);
+
+		if(is_null($id))
+			redirect('Produtos/lista', 'refresh');
+
+		$data['produtos'] = $this->produtos_model->GetById($id);
+		$this->load->view('Produtos/editar', $data);
+
+	}//end Edit()
+
 	/*
 	 *
 	 *
@@ -54,52 +66,10 @@ class Produtos extends CI_Controller {
 
 			}//end else
 
-		} else {
-
-			// caso dê erro
-			// criar classe para validar todos os formulários
+		} else
 			$this->session->set_flashdata('error',validation_errors('<p style="color: red;">* ','</p>'));
 
-		}//end else
-
 		$this->load->view('Produtos/add',$data);
-
-	}
-	/*
-	 *
-	 *
-	 */
-	public function Edit() {
-
-		$id = $this->uri->segment(2);
-
-		if(is_null($id))
-			redirect('Produtos/lista', 'refresh');
-
-		$data['produtos'] = $this->produtos_model->GetById($id);
-		$this->load->view('Produtos/editar', $data);
-
-	}//end Edit()
-
-	/*
-	 *
-	 *
-	 */
-	public function Delete() {
-		$id = $this->uri->segment(2);
-
-		if(is_null($id))
-			redirect('produtos', 'refresh');
-
-		$status = $this->produtos_model->Delete($id);
-
-		if($status) {
-			$this->session->set_flashdata('error', '<p>Erro ao tentar eliminar este contato. </p>');
-		}
-		else
-			$this->session->set_flashdata('error', '<p>Erro ao tentar eliminar este contato. </p>');
-
-		redirect('lista', 'refresh');
 	}
 
 	/*
@@ -115,14 +85,34 @@ class Produtos extends CI_Controller {
 			$produtos = $this->input->post();
 			$status = $this->produtos_model->Update($produtos['id'], $produtos);
 
-			if(!$status) {
+			if(!$status)
 				$this->session->set_flashdata('error', 'Não foi possível atualizar o produto.');
-			} else {
-				$this->session->set_flashdata('success', 'Produto atualizado com sucesso.');
+			else {
+				$this->session->set_flashdata('success', '<script>productUpdatedSuccess();</script>');
 				redirect('lista', 'refresh');
 			}
-		}
+		} else
+			$this->session->set_flashdata('error',validation_errors('<p style="color: red;">* ','</p>'));
 
+	}
+
+	/*
+	 *
+	 *
+	 */
+	public function Delete() {
+		$id = $this->uri->segment(2);
+
+		if(is_null($id))
+			redirect('produtos', 'refresh');
+
+		$status = $this->produtos_model->Delete($id);
+
+		if($status) {
+			$this->session->set_flashdata('success', '<script>productDeleteConfirm();</script>');
+			redirect('lista', 'refresh');
+		} else
+			$this->session->set_flashdata('error', '<p>Erro ao tentar eliminar este contato. </p>');
 	}
 
 

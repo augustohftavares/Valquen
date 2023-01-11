@@ -20,7 +20,13 @@ $this->load->view('comuns/header');
                         <h1 class="recent-Articles">Editar produto</h1>
                     </div>
 
-                    <form method="post" action="<?php echo base_url('Produtos/update') ?>" enctype="multipart/form-data">
+                    <!-- error msg -->
+					<?php 
+						if($this->session->flashdata('error') == TRUE)
+							echo "<p style='color: red;'" . $this->session->flashdata('error') . "</p>";
+					?>
+
+                    <form method="post" action="<?php echo base_url('update') ?>" enctype="multipart/form-data">
 
 						<label for="title">Título</label>
 						<input class="inputs-all" id="title" name="title" value="<?php echo $produtos['title']?>"/>

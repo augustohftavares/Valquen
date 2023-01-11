@@ -35,7 +35,7 @@ $this->load->view('comuns/header');
 						<input class="inputs-all" id="price" name="price" value="<?php echo set_value('price')?>" placeholder="Insira o preço do produto"/>
 
 						<label for="details">Detalhes</label>
-						<input class="inputs-all" id="details" name="details" value="<?php echo set_value('details')?>" placeholder="Insira os detalhes do produto"/>
+						<input class="inputs-all" id="details" name="details" value="Este produto não tem detalhes"/>
 
 						<input class="inputs-all" type="hidden" id="userId" name="userId" value="1" />
 						<input class="input-submit" type="submit" value="Adicionar" />

@@ -17,5 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		<script type="text/javascript" src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 		<script type="text/javascript" src="<?php echo base_url("assets/js/alerts.js")?>"></script>
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+		<script type="text/javascript" src="<?php echo base_url("assets/js/menu.js")?>"></script>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	</head>

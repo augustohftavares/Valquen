@@ -8,6 +8,7 @@
 	box-sizing: border-box;
 	font-family: "Poppins", sans-serif;
 }
+
 :root {
 	--background-color1: #fafaff;
 	--background-color2: #ffffff;
@@ -43,9 +44,7 @@ header {
 	font-weight: 600;
 	color: #011B56;
 }
-.nav-upper-options a {
-	text-decoration: none;
-}
+.nav-upper-options a {text-decoration: none;}
 .icn {height: 30px;}
 
 .menuicn {cursor: pointer;}
@@ -312,19 +311,44 @@ letter-spacing: 3px;
 .lavel-tag {
 	width: 100px;
 	text-align: center;
-	background-color: rgb(0, 177, 0);
-	color: white;
+	color: green;
 	border-radius: 4px;
+}
+
+th {
+	text-align: left;
+	border-bottom: 1px solid;
 }
 
 #produtos{
 	width: 100%;
 	text-align: left;
 	padding: 20px;
+	border-collapse: separate;
+  	border-spacing: 0 30px;
 }
 
 #produtos a {
 	text-decoration: none;
+}
+
+#produtos td{
+	padding: 10px;
+}
+
+#produtos tr:hover{background-color: #EEEDE7;}
+
+
+#produtos td a {
+	color: #fff;
+	background-color: #5500cb;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+#produtos td a:hover {
+	color: #fff;
+	background-color: #2452A3;
 }
 
 .inputs-all {
