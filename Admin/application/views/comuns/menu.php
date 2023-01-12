@@ -15,7 +15,7 @@
 				</div>
      		</a>
 
-     		<a href="#">
+     		<a href="<?php echo base_url("utilizadores")?>">
 				<div class="nav-option option3">
 					<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png" class="nav-img" alt="report">
 					<h3> Utilizadores</h3>

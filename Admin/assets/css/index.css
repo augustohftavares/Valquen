@@ -334,6 +334,7 @@ th {
 
 #produtos td{
 	padding: 10px;
+	cursor: default;
 }
 
 #produtos tr:hover{background-color: #EEEDE7;}

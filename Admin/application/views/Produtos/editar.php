@@ -22,8 +22,8 @@ $this->load->view('comuns/header');
 
                     <!-- error msg -->
 					<?php 
-						if($this->session->flashdata('error') == TRUE)
-							echo "<p style='color: red;'" . $this->session->flashdata('error') . "</p>";
+						if($this->session->flashdata('error_products') == TRUE)
+							echo "<p style='color: red;'" . $this->session->flashdata('error_products') . "</p>";
 					?>
 
                     <form method="post" action="<?php echo base_url('update') ?>" enctype="multipart/form-data">

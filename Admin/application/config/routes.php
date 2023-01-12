@@ -62,9 +62,18 @@ $route['index'] = "Dashboard/index";
  * PRODUTOS
  */
 $route['produtos'] = "Produtos/index";
-$route['lista'] = "Produtos/lista_produtos";
+$route['lista_produtos'] = "Produtos/lista";
 $route['add'] = "Produtos/Add";
 $route['save'] = "Produtos/Save";
 $route['update'] = "Produtos/Update";
-$route['edit/(:num)'] = "Produtos/Edit/$1";
-$route['delete/(:num)'] = "Produtos/Delete/$1";
+$route['edit_produto/(:num)'] = "Produtos/Edit/$1";
+$route['delete_produto/(:num)'] = "Produtos/Delete/$1";
+
+/*
+ * USERS
+ */
+
+$route['utilizadores'] = "Users/index";
+$route['lista_utilizadores'] = "Users/lista";
+$route['edit_utilizador/(:num)'] = "Users/Edit/$1";
+$route['delete_utilizador/(:num)'] = "Users/Delete/$1";
