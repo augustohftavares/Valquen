@@ -33,7 +33,7 @@ $this->load->view('comuns/header');
                                 <th>Telefone</th>
                                 <th>Registado em</th>
                                 <th>Último login</th>
-                                <th>Admin ?</th>
+                                <th>Cargo</th>
                                 <th style="text-align: right;">Ações</th>
                             </tr>
                         </thead>
@@ -79,10 +79,12 @@ $this->load->view('comuns/header');
 
                                         <td>
                                             <?php 
-                                                if($row['admin'])
-                                                    echo "Sim";
-                                                else
-                                                    echo "Não";
+                                                if($row['admin'] == 0)
+                                                    echo "<span style='color: gray;'>[Utilizador]</span>";
+                                                else if($row['admin'] == 1)
+                                                    echo "<span style='color: green;'>[Vendedor]</span>";
+                                                else if($row['admin'] == 2)
+                                                    echo "<span style='color: red;'>[Admin]</span>";
                                             ?>
                                         </td>
 

@@ -42,7 +42,7 @@ $this->load->view('comuns/header');
 						<input class="inputs-all" id="mobile" name="mobile" value="<?php echo $users['mobile']?>"/>
 
 						<label for="description">Descrição</label>
-						<input class="inputs-all" id="description" name="description" value="<?php echo $users['description']?>"/>
+						<textarea class="inputs-all" id="description" name="description"><?php echo $users['description'] ?></textarea>
 
 						<label for="admin">Admin ?</label>
 						<input class="inputs-all" id="admin" name="admin" value="<?php echo $users['admin']?>"/>
@@ -53,9 +53,12 @@ $this->load->view('comuns/header');
 						<input type="hidden" name="registerAt" value="<?php echo $users['registerAt'] ?>" />
 						<input type="hidden" name="lastLogin" value="<?php echo $users['lastLogin'] ?>" />
 
-						<span>(1) - Admin</span>
+						<span>(0) - Utilizador</span>
 						<br />
-						<span>(0) - Normal User</span>
+						<span>(1) - Vendedor</span>
+						<br />
+						<span>(2) - Admin</span>
+
 						<input class="input-submit" type="submit" value="Atualizar" />
 
 					</form>

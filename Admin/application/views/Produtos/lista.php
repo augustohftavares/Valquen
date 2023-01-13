@@ -30,7 +30,6 @@ $this->load->view('comuns/header');
                             <tr>
                                 <th>Imagem</th>
                                 <th>Título</th>
-                                <th>Detalhes</th>
                                 <th>Preço</th>
                                 <th style="text-align: right;">Ações</th>
                             </tr>
@@ -51,7 +50,6 @@ $this->load->view('comuns/header');
                                 <tr>
                                     <td><?php ?></td>
                                     <td><?php echo $row['title'] ?></td>
-                                    <td><?php echo $row['details'] ?></td>
                                     <td class="t-op-nextlvl lavel-tag"><?php echo $row['price'] ?> EUR</td>
                                     <td style="text-align: right;">
                                         <a href="<?php echo $row['edit_url'] ?>">Editar</a>

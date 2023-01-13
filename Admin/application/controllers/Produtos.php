@@ -7,6 +7,7 @@ class Produtos extends CI_Controller {
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->model('produtos_model');
+		$this->db->order_by("createdAt", "desc");
 	}
 
 	public function index() {
@@ -32,6 +33,7 @@ class Produtos extends CI_Controller {
 
 	public function Edit() {
 
+		$data['title'] = "Valquen - Editar Produto";
 		$id = $this->uri->segment(2);
 
 		if(is_null($id))

@@ -20,9 +20,7 @@ class MY_Model extends CI_Model {
         if(!isset($data)) 
             return false;
 
-        // insert(table, data)
         return $this->db->insert($this->table, $data);
-
     }
 
     /* 

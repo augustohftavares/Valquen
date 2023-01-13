@@ -31,9 +31,9 @@ $this->load->view('comuns/header');
 						<label for="title">Título</label>
 						<input class="inputs-all" id="title" name="title" value="<?php echo $produtos['title']?>"/>
 
-						<label for="details">Detalhes</label>
+						<label for="details">Descrição</label>
 						<input class="inputs-all" id="details" name="details" value="<?php echo $produtos['details']?>"/>
-
+						
 						<label for="price">Preço</label>
 						<input class="inputs-all" id="price" name="price" value="<?php echo $produtos['price']?>"/>
 						

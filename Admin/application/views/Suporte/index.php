@@ -51,7 +51,7 @@ $this->load->view('comuns/header');
                                         <?php 
                                                 $date = $row['createdAt'];
                                                 $convertDate = date("d-m-Y H:i", strtotime($date));
-                                                echo $convertDate + "h"; 
+                                                echo $convertDate . "h"; 
                                         ?>
                                             
                                     </td>

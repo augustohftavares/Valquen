@@ -23,7 +23,7 @@ class Users extends CI_Controller {
 	}
 
 	public function Edit() {
-
+		$data['title'] = "Valquen - Editar Utilizador";
 		$id = $this->uri->segment(2);
 
 		if(is_null($id))

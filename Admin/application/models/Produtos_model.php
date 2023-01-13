@@ -8,6 +8,7 @@ class Produtos_model extends MY_Model {
 		$this->table = 'product';
 	}
 	
+
 	function Modelar($produtos){
 
 		if($produtos) {

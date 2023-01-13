@@ -34,10 +34,16 @@ $this->load->view('comuns/header');
 						<label for="price">Preço</label>
 						<input class="inputs-all" id="price" name="price" value="<?php echo set_value('price')?>" placeholder="Insira o preço do produto"/>
 
-						<label for="details">Detalhes</label>
+						<label for="details">Descrição</label>
 						<input class="inputs-all" id="details" name="details" value="Este produto não tem detalhes"/>
 
+						<?php 
+							$date = new DateTime();
+							$dt= $date->format('Y-m-d H:i:s'); 
+							echo $dt;
+						?>
 						<input class="inputs-all" type="hidden" id="userId" name="userId" value="1" />
+						<input class="inputs-all" type="hidden" id="createdAt" name="createdAt" value="<?php echo $dt ?>" />
 						<input class="input-submit" type="submit" value="Adicionar" />
 
 					</form>
