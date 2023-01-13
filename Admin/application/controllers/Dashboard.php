@@ -8,15 +8,12 @@ class Dashboard extends CI_Controller {
 		parent::__construct();
 		$this->load->helper('url');
 
-	}//end constructor()
+	}
 
-	// .../index.php/dashboard/index
-	// .../index.php/dashboard
 	public function index() {
-		// Passagem entre controller e view
 		$data['title'] = "Valquen - Admin";
 		$this->load->view('index', $data);
-	}//end index()
+	}
 
 }
 

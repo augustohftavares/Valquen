@@ -26,7 +26,7 @@ $this->load->view('comuns/header');
 							echo "<p style='color: red;'" . $this->session->flashdata('error_users') . "</p>";
 					?>
 
-                    <form method="post" action="<?php echo base_url('update') ?>" enctype="multipart/form-data">
+                    <form method="post" action="<?php echo base_url('update_users') ?>" enctype="multipart/form-data">
 
 						<label for="firstName">Primeiro Nome</label>
 						<input class="inputs-all" id="firstName" name="firstName" value="<?php echo $users['firstName']?>"/>
@@ -49,9 +49,13 @@ $this->load->view('comuns/header');
 
 						
 						<input type="hidden" name="id" value="<?php echo $users['id'] ?>" />
+						<input type="hidden" name="lastLogin" value="<?php echo $users['password'] ?>" />
 						<input type="hidden" name="registerAt" value="<?php echo $users['registerAt'] ?>" />
 						<input type="hidden" name="lastLogin" value="<?php echo $users['lastLogin'] ?>" />
 
+						<span>(1) - Admin</span>
+						<br />
+						<span>(0) - Normal User</span>
 						<input class="input-submit" type="submit" value="Atualizar" />
 
 					</form>

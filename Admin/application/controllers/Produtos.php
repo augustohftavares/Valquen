@@ -35,7 +35,7 @@ class Produtos extends CI_Controller {
 		$id = $this->uri->segment(2);
 
 		if(is_null($id))
-			redirect('Produtos/lista', 'refresh');
+			redirect(base_url("lista_produtos"), 'refresh');
 
 		$data['produtos'] = $this->produtos_model->GetById($id);
 		$this->load->view('Produtos/editar', $data);
@@ -62,7 +62,7 @@ class Produtos extends CI_Controller {
 			 else{
 
 				$this->session->set_flashdata('success', '<script>productAddSuccess();</script>');
-				redirect('lista_produtos', 'refresh');
+				redirect(base_url("lista_produtos"), 'refresh');
 
 			}//end else
 
@@ -89,7 +89,7 @@ class Produtos extends CI_Controller {
 				$this->session->set_flashdata('error', 'Não foi possível atualizar o produto.');
 			else {
 				$this->session->set_flashdata('success', '<script>productUpdatedSuccess();</script>');
-				redirect('lista_produtos', 'refresh');
+				redirect(base_url("lista_produtos"), 'refresh');
 			}
 		} else
 			$this->session->set_flashdata('error_products',validation_errors('<p style="color: red;">* ','</p>'));
@@ -108,8 +108,8 @@ class Produtos extends CI_Controller {
 		$status = $this->produtos_model->Delete($id);
 
 		if($status) {
-			$this->session->set_flashdata('success', '<script>productDeleteConfirm();</script>');
-			redirect('lista_produtos', 'refresh');
+			$this->session->set_flashdata('success', '');
+			redirect(base_url("lista_produtos"), 'refresh');
 		} else
 			$this->session->set_flashdata('error', '<p>Erro ao tentar eliminar este contato. </p>');
 	}

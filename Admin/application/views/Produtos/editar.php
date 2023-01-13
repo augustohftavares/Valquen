@@ -26,7 +26,7 @@ $this->load->view('comuns/header');
 							echo "<p style='color: red;'" . $this->session->flashdata('error_products') . "</p>";
 					?>
 
-                    <form method="post" action="<?php echo base_url('update') ?>" enctype="multipart/form-data">
+                    <form method="post" action="<?php echo base_url('update_products') ?>" enctype="multipart/form-data">
 
 						<label for="title">Título</label>
 						<input class="inputs-all" id="title" name="title" value="<?php echo $produtos['title']?>"/>

@@ -25,7 +25,7 @@ $this->load->view('comuns/header');
                             echo $this->session->flashdata('success');
                     ?>
      
-                    <table id="produtos">
+                    <table id="table">
                         <thead>
                             <tr>
                                 <th>Imagem</th>
@@ -46,20 +46,20 @@ $this->load->view('comuns/header');
 
                             <?php else: ?>
 
-                                <?php foreach ($produtos as $row): ?>
+                            <?php foreach ($produtos as $row): ?>
 
-                                    <tr>
-                                        <td><?php ?></td>
-                                        <td><?php echo $row['title'] ?></td>
-                                        <td><?php echo $row['details'] ?></td>
-                                        <td class="t-op-nextlvl lavel-tag"><?php echo $row['price'] ?> EUR</td>
-                                        <td style="text-align: right;">
-                                            <a href="<?php echo $row['edit_url'] ?>">Editar</a>
-                                            <a href="<?php echo $row['del_url'] ?>" onclick="return confirm('Pretendes mesmo eliminar este produto ?');">Eliminar</a>
-                                        </td>
-                                    </tr>
+                                <tr>
+                                    <td><?php ?></td>
+                                    <td><?php echo $row['title'] ?></td>
+                                    <td><?php echo $row['details'] ?></td>
+                                    <td class="t-op-nextlvl lavel-tag"><?php echo $row['price'] ?> EUR</td>
+                                    <td style="text-align: right;">
+                                        <a href="<?php echo $row['edit_url'] ?>">Editar</a>
+                                        <a href="<?php echo $row['del_url'] ?>" onclick="return confirm('Pretendes mesmo eliminar este produto ?');">Eliminar</a>
+                                    </td>
+                                </tr>
 
-                                <?php endforeach ?>
+                            <?php endforeach ?>
 
                             <?php endif ?>
 

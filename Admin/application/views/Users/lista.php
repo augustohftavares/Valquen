@@ -23,8 +23,8 @@ $this->load->view('comuns/header');
                         if($this->session->flashdata('success') == TRUE) 
                             echo $this->session->flashdata('success');
                     ?>
-     
-                    <table id="produtos">
+
+                    <table id="table">
                         <thead>
                             <tr>
                                 <th>Primeiro Nome</th>
@@ -50,28 +50,45 @@ $this->load->view('comuns/header');
 
                                 <?php foreach ($users as $row): ?>
 
+                                    <p>
+                                        <?php
+                                            
+                                        ?>
+
+                                    </p>
+
                                     <tr>
                                         <td><?php echo $row['firstName'] ?></td>
                                         <td><?php echo $row['lastName'] ?></td>
                                         <td><?php echo $row['email'] ?></td>
                                         <td><?php echo $row['mobile'] ?></td>
-                                        <td><?php echo $row['registerAt'] ?></td>
-                                        <td><?php echo $row['lastLogin'] ?></td>
+                                        <td>
+                                            <?php 
+                                                $date = $row['registerAt'];
+                                                $convertDate = date("d-m-Y H:i", strtotime($date));
+                                                echo $convertDate . "h"; 
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php 
+                                                $date = $row['lastLogin'];
+                                                $convertDate = date("d-m-Y H:i", strtotime($date));
+                                                echo $convertDate . "h"; 
+                                            ?>
+                                        </td>
 
-
-                                        <td><?php 
-                                            if($row['admin']){
-                                                echo "Sim";
-                                            } else {
-                                                echo "Não";
-                                            } 
-                                        ?></td>
-
-
+                                        <td>
+                                            <?php 
+                                                if($row['admin'])
+                                                    echo "Sim";
+                                                else
+                                                    echo "Não";
+                                            ?>
+                                        </td>
 
                                         <td style="text-align: right;">
                                             <a href="<?php echo $row['edit_url'] ?>">Editar</a>
-                                            <a href="<?php echo $row['del_url'] ?>" onclick="return confirm('Pretendes mesmo eliminar este produto ?');">Eliminar</a>
+                                            <a href="<?php echo $row['del_url'] ?>" onclick="return confirm('Pretendes mesmo eliminar este utilizador ?');">Eliminar</a>
                                         </td>
                                     </tr>
 

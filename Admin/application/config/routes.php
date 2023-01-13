@@ -65,15 +65,21 @@ $route['produtos'] = "Produtos/index";
 $route['lista_produtos'] = "Produtos/lista";
 $route['add'] = "Produtos/Add";
 $route['save'] = "Produtos/Save";
-$route['update'] = "Produtos/Update";
+$route['update_products'] = "Produtos/Update";
 $route['edit_produto/(:num)'] = "Produtos/Edit/$1";
 $route['delete_produto/(:num)'] = "Produtos/Delete/$1";
 
 /*
  * USERS
  */
-
 $route['utilizadores'] = "Users/index";
 $route['lista_utilizadores'] = "Users/lista";
+$route['update_users'] = "Users/Update";
 $route['edit_utilizador/(:num)'] = "Users/Edit/$1";
 $route['delete_utilizador/(:num)'] = "Users/Delete/$1";
+
+/*
+ * SUPPORT
+ */
+$route['suporte'] = "Suporte/index";
+$route['ver_suporte/(:num)'] = "Suporte/Ver/$1";

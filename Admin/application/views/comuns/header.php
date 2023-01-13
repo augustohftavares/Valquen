@@ -13,6 +13,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 		<link href="<?php echo base_url("assets/css/index.css") ?>" rel="stylesheet" />
+		<link href="<?php echo base_url("assets/css/menu/menu.css") ?>" rel="stylesheet" />
+		<link href="<?php echo base_url("assets/css/menu/menuheader.css") ?>" rel="stylesheet" />
 		<link href="<?php echo base_url("assets/css/responsive.css") ?>" rel="stylesheet" />
 
 		<script type="text/javascript" src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

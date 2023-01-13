@@ -50,3 +50,14 @@ function productUpdatedSuccess() {
 /*
  * USERS ALERTS
  */
+function userUpdatedSuccess() {
+	Swal.fire({
+  		position: 'top-end',
+  		icon: 'success',
+  		title: 'Sucesso',
+  		text: 'O utilizador foi atualizado com sucesso.',
+  		showConfirmButton: false,
+  		timer: 2000,
+  		timerProgressBar: true
+	})
+}
