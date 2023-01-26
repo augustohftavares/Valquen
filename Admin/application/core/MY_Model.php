@@ -1,8 +1,8 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 class MY_Model extends CI_Model {
-    
-    /* 
+
+    /*
      *represents the database table
      */
     var $table = "";
@@ -16,14 +16,13 @@ class MY_Model extends CI_Model {
      * @return boolean and receive array
      */
     public function Insert($data) {
-
-        if(!isset($data)) 
+        if(!isset($data))
             return false;
 
         return $this->db->insert($this->table, $data);
     }
 
-    /* 
+    /*
      *  $int id get item by id
      *  @return array
      */
@@ -34,10 +33,10 @@ class MY_Model extends CI_Model {
 
         $this->db->where('id', $id);
         $query = $this->db->get($this->table);
-        
+
         if($query->num_rows() > 0)
             return $query->row_array();
-        else 
+        else
             return null;
     }
 
@@ -66,7 +65,7 @@ class MY_Model extends CI_Model {
 
         if(is_null($id) || !isset($data))
             return false;
-        
+
         $this->db->where('id', $id);
         return $this->db->update($this->table, $data);
     }
@@ -77,13 +76,12 @@ class MY_Model extends CI_Model {
      */
     function Delete($id) {
 
-        if(is_null($id)) 
+        if(is_null($id))
             return false;
 
         $this->db->where('id', $id);
 
         return $this->db->delete($this->table);
-
     }
 
 }//end class MY_Model

@@ -1,1 +1,3 @@
 https://mysql.tutorials24x7.com/blog/guide-to-design-database-for-shopping-cart-in-mysql
+
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sidenav_push_opacity

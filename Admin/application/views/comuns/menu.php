@@ -1,56 +1,42 @@
-<div class="navcontainer" id="navcontainer">
-	<nav class="nav">
-		<div class="nav-upper-options">
-
-     		<a class="link-menu" href="<?php echo base_url()?>">
-				<div class="nav-option option1">
-					<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"class="nav-img"alt="dashboard">
-	                <h3> Dashboard</h3>
-				</div>
-			</a>
-     
-     		<a class="link-menu" href="<?php echo base_url("produtos")?>">
-				<div class="option2 nav-option">
-					<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/9.png" class="nav-img" alt="articles">
-					<h3>Produtos</h3>
-				</div>
-     		</a>
-
-     		<a class="link-menu" href="<?php echo base_url("utilizadores")?>">
-				<div class="nav-option">
-					<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png" class="nav-img" alt="report">
-					<h3> Utilizadores</h3>
-				</div>
-     		</a>
-
-     		<a class="link-menu" href="<?php echo base_url("suporte")?>">
-				<div class="nav-option">
-					<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/6.png" class="nav-img" alt="report">
-					<h3>Suporte</h3>
-				</div>
-     		</a>
-
-     		<a class="link-menu" href="#">
-				<div class="nav-option option5">
-					<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183323/10.png" class="nav-img" alt="perfil">
-					<h3> Perfil</h3>
-				</div>
-     
-     		<a class="link-menu" href="#">
-				<div class="nav-option">
-					<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/4.png"class="nav-img" alt="definições">
-					<h3> Definições</h3>
-				</div>
-			</a>
-
-
-     		<a class="link-menu" href="#">
-	     		<div class="nav-option logout">
-					<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png" class="nav-img" alt="logout">
-					<h3>Sair</h3>
-				</div>
-			</a>
-
-		</div>
-	</nav>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <h2><i class='bx bxs-right-arrow' ></i> Admin Panel</h2>
+  <hr />
+  <a href="<?php echo base_url("dashboard")?>"><i class='bx bxs-dashboard'></i> Dashboard</a>
+  <a href="<?php echo base_url("utilizadores")?>"><i class='bx bxs-user'></i> Utilizadores</a>
+  <a href="<?php echo base_url("produtos")?>"><i class='bx bxs-shopping-bag'></i> Produtos</a>
+  <a href="<?php echo base_url("contatos")?>"><i class='bx bxs-spreadsheet'></i> Contatos</a>
 </div>
+
+<div id="menu">
+  <span class="menuTitle" onclick="openNav()">&#9776; Valquen Loja Online</span>
+
+  <?php if(!$_SESSION['logged_in'] === FALSE): ?>
+  <span class="authV">
+    <a href="<?php echo base_url("terminar_sessao")?>" onclick="return confirm('Pretendes mesmo terminar sessão ?');">
+      <i class='bx bx-log-in' ></i>
+    </a>
+  </span>
+  <?php endif;?>
+
+  <?php if(!$_SESSION['logged_in'] === TRUE): ?>
+    <span class="authVV">
+      <a href="<?php echo base_url("iniciar_sessao")?>">
+        Iniciar Sessão
+      </a>
+    </span>
+  <?php endif; ?>
+
+</div>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("menu").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("menu").style.marginLeft= "0";
+}
+</script>

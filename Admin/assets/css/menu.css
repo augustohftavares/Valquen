@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+.menuTitle {
+  color: #fff;
+  cursor:pointer;
+  font-size:20px;
+  font-family: Anton, sans-serif;
+  letter-spacing: 2px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right, #333333, #dd1818);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+  margin-bottom: 10px;
+}
+
+.sidenav a:hover {
+  color: #000;
+}
+
+.sidenav h2{
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+  margin-bottom: 10px;
+}
+
+hr {
+  background: #fff;
+  margin-bottom: 20px;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#menu {
+  transition: margin-left .5s;
+  padding: 10px;
+  width: 100%;
+  background: linear-gradient(to left, #333333, #dd1818);
+}
+
+.authVV{
+  color: #fff;
+  background: green;
+  padding: 5px;
+  float: right;
+  margin-top: 6px;
+  margin-right: 20px;
+  border-radius: 5px;
+}
+
+.authVV a {
+  color: #fff;
+  padding: 5px;
+  text-decoration: none;
+}
+.authV i {
+  color: #fff;
+  float: right;
+  font-size: 40px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}

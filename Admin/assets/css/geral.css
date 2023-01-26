@@ -1,0 +1,74 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+body{
+	background: #E8E8E8;
+}
+
+.msgLogIn{
+	background: red;
+	padding: 20px;
+	margin: auto;
+	margin-top: 100px;
+	color: #fff;
+	text-align: center;
+	font-size: 20px;
+	width: 50%;
+}
+
+
+/*DASHBOARD CSS*/
+.columnDashboard {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+.rowDash {
+	margin-top: 50px;
+}
+
+.rowDash:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .columnDashboard {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+.cardDashboard {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+  background-color: #f1f1f1;
+	width: 300px;
+	margin: auto;
+}
+
+.cardDashboard h3 {
+	color: gray;
+	font-weight: 500;
+	font-family: Anton, sans-serif;
+	letter-spacing: 1px;
+	margin-bottom: 10px;
+}
+
+.cardDashboard i {
+	color: #FF2E2E;
+}
+
+.cardDashboard p {
+	color: green;
+	font-size: 18px;
+}
