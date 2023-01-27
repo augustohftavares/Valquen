@@ -19,13 +19,18 @@ $this->load->view('comuns/header');
 		<?php endif ?>
     <form class="formAuth" action="<?php echo base_url("entrar") ?>" method="post">
 
+      <label for="email"></label>
       <input class="userEmailAuth" type="text" align="center" name="email" placeholder="Email">
 
+      <label for="password"></label>
       <input class="passAuth" type="password" align="center" name="password" placeholder="Palavra-passe">
+
+      <?php $newDate = new DateTime();?>
+      <input type="hidden" name="lastLogin" value="<?php $newDate ?>" />
 
       <button class="submitAuth linkAuth" type="submit" align="center">Entrar</button>
 
-      <p class="forgotPassAuth" align="center"><a href="#" class="forgotPassAuth">Esqueceste-te da password ?</p>
+      <p class="forgotPassAuth" align="center"><a href="<?php echo base_url("") ?>" class="forgotPassAuth">Esqueceste-te da password ?</p>
 
   </div>
 

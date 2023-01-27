@@ -24,7 +24,7 @@ class Auth extends CI_Controller {
 
     $inputs = array(
       "email" => $this->input->post('email'),
-      "password" => $this->input->post('password')
+			"password" => $this->input->post('password'),
     );
 
     $query = $this->db->get_where('user');
@@ -34,7 +34,7 @@ class Auth extends CI_Controller {
 
       $inputs["password"] = $user_row->password;
       $this->db->where('email', $inputs["email"]);
-      $this->db->where('password', $inputs["password"]);
+			$this->db->where('password', $inputs["password"]);
 
       $query = $this->db->get('user');
       $find_user = $query->num_rows($query);
@@ -47,14 +47,22 @@ class Auth extends CI_Controller {
       } else {
 
         if($find_user > 0){
-          $_SESSION['logged_in'] = (bool)TRUE;
+
+					$updateData = [
+   					'lastLogin' => date('Y-m-d H:i:s')
+					];
+
+					$this->db->where('email', $inputs["email"]);
+					$this->db->update('user', $updateData);
+
+					$_SESSION['logged_in'] = (bool)TRUE;
+					$_SESSION['username'] = $user_row->username;
           $this->session->set_flashdata('login_success', '');
           redirect(base_url("dashboard"), 'refresh');
         } else {
-          $this->session->set_flashdata('login_error', 'Contate um administrador');
+          $this->session->set_flashdata('login_error', 'Houve um problema interno, contate um administrador');
           redirect(base_url("iniciar_sessao"), 'refresh');
         }
-
       }
     } else {
       $this->session->set_flashdata('form_error', 'O campo email ou o campo password estão errados ou vazios');
@@ -77,6 +85,7 @@ class Auth extends CI_Controller {
 				//unset($_SESSION[$key]);
 			//}
 			unset($_SESSION['logged_in']);
+			unset($_SESSION['username']);
 			$_SESSION['logged_in'] = (bool)false;
 			redirect(base_url("iniciar_sessao"), 'refresh');
 		} else

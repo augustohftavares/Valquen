@@ -9,11 +9,11 @@
 </div>
 
 <div id="menu">
-  <span class="menuTitle" onclick="openNav()">&#9776; Valquen Loja Online</span>
+  <span class="menuTitle" onclick="openNav()">&#9776; <?php echo $title ?></span>
 
   <?php if(!$_SESSION['logged_in'] === FALSE): ?>
   <span class="authV">
-    <a href="<?php echo base_url("terminar_sessao")?>" onclick="return confirm('Pretendes mesmo terminar sessão ?');">
+    <a href="<?php echo base_url("terminar_sessao")?>">
       <i class='bx bx-log-in' ></i>
     </a>
   </span>
@@ -30,13 +30,13 @@
 </div>
 
 <script>
-function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-  document.getElementById("menu").style.marginLeft = "250px";
-}
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("menu").style.marginLeft = "250px";
+  }
 
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-  document.getElementById("menu").style.marginLeft= "0";
-}
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("menu").style.marginLeft= "0";
+  }
 </script>

@@ -20,8 +20,6 @@ $route['terminar_sessao'] = "Auth/logout";
 $route['criar_conta'] = "Auth/index";
 $route['entrar'] = "Auth/login";
 
-
-
 /*
  * DASHBOARD
  */
@@ -30,4 +28,12 @@ $route['dashboard'] = "Dashboard/index";
 /*
  * Users
  */
- $route['utilizadores'] = "User/index";
+$route['utilizadores'] = "User/index";
+$route['detalhes_utilizador/(:num)'] = "User/Details/$1";
+$route['editar_utilizador/(:num)'] = "User/Edit/$1";
+$route['editar_utilizador_'] = "User/Update";
+
+/*
+ * Produtos
+ */
+ $route['produtos'] = "Product/index";

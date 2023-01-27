@@ -14,14 +14,14 @@ $this->load->view('comuns/menu');
     <div class="columnDashboard">
       <div class="cardDashboard">
         <h3><i class='bx bxs-user'></i> Total de utilizadores</h3>
-        <p><i class='bx bx-right-arrow-alt' ></i>200</p>
+        <p><i class='bx bx-right-arrow-alt' ></i><?php echo $usersTotal; ?></p>
       </div>
     </div>
 
     <div class="columnDashboard">
       <div class="cardDashboard">
         <h3><i class='bx bxs-shopping-bags' ></i> Total de Produtos</h3>
-        <p><i class='bx bx-right-arrow-alt' ></i>1000</p>
+        <p><i class='bx bx-right-arrow-alt' ></i><?php echo $productsTotal; ?></p>
       </div>
     </div>
 
@@ -38,7 +38,6 @@ $this->load->view('comuns/menu');
         <p><i class='bx bx-right-arrow-alt'></i>123452</p>
       </div>
     </div>
-
 
 </div>
 

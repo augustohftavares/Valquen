@@ -1,10 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 .menuTitle {
   color: #fff;
   cursor:pointer;
   font-size:20px;
-  font-family: Anton, sans-serif;
-  letter-spacing: 2px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+}
+
+.welcomeMsg {
+  color: #fff;
+  margin-left: 490px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  font-weight: 700 !important;
 }
 
 .sidenav {
