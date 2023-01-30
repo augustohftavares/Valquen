@@ -5,34 +5,37 @@
     font-family: Arial;
 }
 
-body{background-color: #F3F3F3;}
-
-.logo {
-    width: 300px;
-    margin-top: -50px;
-    pointer-events: none;
+.divSlideShow{
+  width: 100%;
+  background-color: #FF2E2E;
 }
 
-.myaccount{
-    float: right;
-    color: #fff;
-    margin-top: 20px;
+.slideShow {
+  display:none;
+  width: 100%;
+  margin: auto;
+  height: 400px;
+  pointer-events: none;
 }
 
-.enterimg {
-    width: 50px;
-    float: right;
-    margin-top: 5px;
+.category-menu {
+  width: 100%;
+  margin-top: 60px;
 }
 
-.title-avalquen {
-    margin-top: 30px;
-    text-align: center;
+.category-menu a {
+  color: #000;
+  text-decoration: none;
+  padding: 10px;
+  border: 1px solid gray;
+  width: 100%;
 }
 
+.category-menu a:hover {
+  border-color: red;
+}
 
-
-#footer {
-    text-align: center;
-    color: #000;
+.category-links {
+  padding: 20px;
+  text-align: center;
 }

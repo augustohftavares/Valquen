@@ -17,6 +17,7 @@ class User extends CI_Controller {
 	}//end index
 
 	public function edit() {
+
 		$data['title'] = "PSR - Editar Utilizador";
 		$id = $this->uri->segment(2);
 

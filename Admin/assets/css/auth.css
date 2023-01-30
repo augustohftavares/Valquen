@@ -53,6 +53,8 @@
   padding-top: 40px;
 }
 
+.formAuth textarea{resize: none;}
+
 .formLabel {
   width: 76%;
   color: rgb(38, 50, 56);

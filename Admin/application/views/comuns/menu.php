@@ -1,11 +1,23 @@
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <h2><i class='bx bxs-right-arrow' ></i> Admin Panel</h2>
+  <h2><i class='bx bxs-virus'></i> Admin Panel</h2>
   <hr />
-  <a href="<?php echo base_url("dashboard")?>"><i class='bx bxs-dashboard'></i> Dashboard</a>
-  <a href="<?php echo base_url("utilizadores")?>"><i class='bx bxs-user'></i> Utilizadores</a>
-  <a href="<?php echo base_url("produtos")?>"><i class='bx bxs-shopping-bag'></i> Produtos</a>
-  <a href="<?php echo base_url("contatos")?>"><i class='bx bxs-spreadsheet'></i> Contatos</a>
+  <a href="<?php echo base_url("dashboard")?>">
+    <i class='bx bxs-dashboard'></i>
+    <span>Dashboard</span>
+  </a>
+  <a href="<?php echo base_url("utilizadores")?>">
+    <i class='bx bxs-user'></i>
+    <span>Utilizadores - Gestão de utilziadores</span>
+  </a>
+  <a href="<?php echo base_url("produtos")?>">
+    <i class='bx bxs-shopping-bag'></i>
+    <span>Produtos - Gestão de produtos</span>
+  </a>
+  <a href="<?php echo base_url("contatos")?>">
+    <i class='bx bxs-spreadsheet'></i>
+    <span>Contatos - Gerir todos os pedidos de ajuda/dúvidas dos utilizadores</span>
+  </a>
 </div>
 
 <div id="menu">
@@ -31,7 +43,7 @@
 
 <script>
   function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("mySidenav").style.width = "100%";
     document.getElementById("menu").style.marginLeft = "250px";
   }
 

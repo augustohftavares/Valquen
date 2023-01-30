@@ -12,7 +12,7 @@ $this->load->view('comuns/menu');
 
   <div class="mainEdit">
 
-    <p class="sign" align="center">Editar Utilizador [<?php echo $user['id']?>]</p>
+    <p class="sign" align="center">Editar Utilizador #<?php echo $user['id']?></p>
 
     <form class="formAuth" action="<?php echo base_url("editar_utilizador_") ?>" method="post">
 

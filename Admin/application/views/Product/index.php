@@ -14,6 +14,8 @@ $this->load->view('comuns/menu');
 
     <h1 class="userPageTitle">Lista de todos os produdos publicados</h1>
 
+    <a class="btnAdd" href="<?php echo base_url("adicionar_produto") ?>"><i class='bx bxs-cart-add' ></i></a>
+
     <table class="tableList">
       <thead>
         <tr>
@@ -28,25 +30,39 @@ $this->load->view('comuns/menu');
       </thead>
 
       <tbody>
-        <?php foreach($product as $row): ?>
-          <?php
-            // DATE FORMAT
-            $date = $row['publishedAt'];
-            $convertDate = date("d/m/Y", strtotime($date));
-          ?>
+        <?php if($product == FALSE): ?>
           <tr>
-            <td>[<?php echo $row['id']?>]</td>
-            <td><?php echo $row['title']?></td>
-            <td><?php echo $row['price']?></td>
-            <td><?php echo $row['discount']?></td>
-            <td><?php echo $row['quantity']?></td>
-            <td><?php echo $convertDate ?></td>
-            <td>
-              <a href="<?php echo $row['edit_url'] ?>"><i class='bx bxs-edit'></i></a>
-              <a href="<?php echo $row['detail_url'] ?>"><i class='bx bxs-user-detail'></i></a>
-            </td>
+            <td>#</td>
+            <td>Não existe nenhum produto ainda!</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
-        <?php endforeach; ?>
+
+        <?php else: ?>
+          <?php foreach($product as $row): ?>
+            <?php
+              // DATE FORMAT
+              $date = $row['publishedAt'];
+              $convertDate = date("d/m/Y", strtotime($date));
+            ?>
+            <tr>
+              <td>#<?php echo $row['id']?></td>
+              <td><?php echo $row['title']?></td>
+              <td><?php echo $row['price']?></td>
+              <td><?php echo $row['discount']?></td>
+              <td><?php echo $row['quantity']?></td>
+              <td><?php echo $convertDate ?></td>
+              <td>
+                <a href="<?php echo $row['edit_url'] ?>"><i class='bx bxs-edit'></i></a>
+                <a href="<?php echo $row['detail_url'] ?>"><i class='bx bx-detail' ></i></a>
+                <a href="<?php echo $row['delete_url'] ?>"><i class='bx bx-message-square-x'></i></a>
+              </td>
+            </tr>
+          <?php endforeach; ?>
+        <?php endif; ?>
       </tbody>
 
     </table>

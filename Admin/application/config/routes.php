@@ -36,4 +36,10 @@ $route['editar_utilizador_'] = "User/Update";
 /*
  * Produtos
  */
- $route['produtos'] = "Product/index";
+$route['produtos'] = "Product/index";
+$route['adicionar_produto'] = "Product/add";
+$route['adicionar_produto_'] = "Product/Save";
+$route['editar_produto/(:num)'] = "Product/Edit/$1";
+$route['editar_produto_'] = "Product/Update";
+$route['detalhes_produto/(:num)'] = "Product/Detail/$1";
+$route['eliminar_produto/(:num)'] = "Product/Delete/$1";

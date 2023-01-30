@@ -42,7 +42,7 @@ $this->load->view('comuns/menu');
 						$convertDate = date("d/m/Y", strtotime($date));
 					?>
           <tr>
-            <td>[<?php echo $row['id']?>]</td>
+            <td>#<?php echo $row['id']?></td>
             <td><?php echo $row['username']?></td>
             <td><?php echo $row['email']?></td>
             <td><?php echo $row['phone']?></td>
