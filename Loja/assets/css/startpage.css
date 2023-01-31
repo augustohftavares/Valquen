@@ -1,0 +1,86 @@
+.divSlideShow{
+  width: 100%;
+  background-color: #FF2E2E;
+}
+
+.slideShow {
+  display:none;
+  width: 100%;
+  margin: auto;
+  height: 400px;
+  pointer-events: none;
+}
+
+.category-menu {
+  width: 100%;
+  margin-top: 60px;
+}
+
+.category-menu a {
+  color: #000;
+  text-decoration: none;
+  padding: 10px;
+  border: 1px solid gray;
+  width: 100%;
+}
+
+.category-menu a:hover {
+  border-color: red;
+}
+
+.category-links {
+  padding: 20px;
+  text-align: center;
+}
+
+.divEmDestaque{margin-top: 40px; }
+
+.divEmDestaque h2{
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.divEmDestaque:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.cardDestaque{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+.cardDestaque img {border-bottom: 1px solid #000; margin-bottom: 10px;}
+
+.emDestaqueColumn {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+.divEmDestaqueSize {
+  width: 90%;
+  margin: auto;
+}
+
+.destaquePrice {
+  font-size: 20px;
+  color: red;
+}
+
+.destaquePromotion {
+  font-size: 15px;
+  text-decoration: line-through;
+  color: gray;
+}
+
+@media screen and (max-width: 1000px) {
+  .emDestaqueColumn {
+    width: 50%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}

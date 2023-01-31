@@ -23,6 +23,22 @@ $this->load->view('comuns/menu');
   </div>
 </div>
 
+<div class="divEmDestaque">
+  <div class="divEmDestaqueSize">
+    <h2>Top Destaques</h2>
+    <div class="emDestaqueColumn">
+      <div class="cardDestaque">
+        <!-- img 300x300 -->
+        <img src="https://www.airjordan-portugal.com/images/airjordan-portugal/Sapatos_Lifestyle_Nike_Air_Jordan_1_Retr-OVBD-64925.jpg" alt="imgteset" />
+        <h3>Sapatilhas Nike Air Jordan</h3>
+        <p><span class="destaquePrice">120 €</span> <span class="destaquePromotion">99.99 €</span></p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
 <script>
 var myIndex = 0;
 carousel();

@@ -4,38 +4,3 @@
     box-sizing: border-box;
     font-family: Arial;
 }
-
-.divSlideShow{
-  width: 100%;
-  background-color: #FF2E2E;
-}
-
-.slideShow {
-  display:none;
-  width: 100%;
-  margin: auto;
-  height: 400px;
-  pointer-events: none;
-}
-
-.category-menu {
-  width: 100%;
-  margin-top: 60px;
-}
-
-.category-menu a {
-  color: #000;
-  text-decoration: none;
-  padding: 10px;
-  border: 1px solid gray;
-  width: 100%;
-}
-
-.category-menu a:hover {
-  border-color: red;
-}
-
-.category-links {
-  padding: 20px;
-  text-align: center;
-}
