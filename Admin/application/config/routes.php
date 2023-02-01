@@ -17,7 +17,8 @@ $route['translate_uri_dashes'] = FALSE;
  */
 $route['iniciar_sessao'] = "Auth/index";
 $route['terminar_sessao'] = "Auth/logout";
-$route['criar_conta'] = "Auth/index";
+$route['criar_administrador'] = "Auth/index_";
+$route['registar_conta'] = "Auth/register";
 $route['entrar'] = "Auth/login";
 
 /*

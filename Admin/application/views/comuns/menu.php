@@ -18,6 +18,10 @@
     <i class='bx bxs-spreadsheet'></i>
     <span>Contatos - Gerir todos os pedidos de ajuda/dúvidas dos utilizadores</span>
   </a>
+  <a href="<?php echo base_url("criar_administrador")?>">
+    <i class='bx bx-user-plus'></i>
+    <span>Criar conta administrador</span>
+  </a>
 </div>
 
 <div id="menu">

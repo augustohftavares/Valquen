@@ -14,6 +14,52 @@ class Auth extends CI_Controller {
 		$this->load->view('Auth/login', $data);
 	}//end index()
 
+	public function index_() {
+		$data['title'] = "Valquen - Criar Conta para administrador";
+		$this->load->view('Auth/register', $data);
+	}//end index()
+
+
+	/**
+  ** Login System
+  **
+  ** @param none
+  ** @return NULL
+  **/
+	public function register() {
+
+		$password = $this->input->post('password');
+		$confirm_password = $this->input->post('password_confirm');
+
+		$data = array(
+			"username" => $this->input->post('username'),
+			"email" => $this->input->post('email'),
+			"password" => $this->input->post('password'),
+			"password_confirm" => $password
+		);
+
+		$this->form_validation->set_rules('username', 'Nome do utilizador', 'trim|required|min_length[3]');
+		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[admin.email]');
+		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[6]');
+		$this->form_validation->set_rules('password_confirm', 'Confirmar Password', 'trim|required|min_length[6]|matches[password]');
+
+		if ($this->form_validation->run() === false) {
+			$data['title'] = 'Valquen - Criar Conta para administrador';
+			$this->load->view("Auth/register", $data);
+		} else {
+			$data = array(
+				"username" => $this->input->post('username'),
+				"email" => $this->input->post('email'),
+				"password" => password_hash($password, PASSWORD_DEFAULT)
+			);
+			$this->auth_model->Insert($data);
+			$this->session->set_flashdata('success', '<script>registerAdminSuc();</script>');
+			$data['title'] = 'Valquen - Iniciar Sessão';
+			$this->load->view("Dashboard/index", $data);
+		}
+
+	}//end register
+
   /**
   ** Login System
   **
