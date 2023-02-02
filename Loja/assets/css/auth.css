@@ -1,0 +1,131 @@
+.navbar__nav i {
+  font-size: 30px
+}
+
+.form_error {
+  margin-left: 20px;
+  color: red;
+}
+
+.form_error i{color: red !important}
+
+.leftcolumn {
+  float: left;
+  margin-left: 45px;
+  width: 60%;
+}
+
+.rightcolumn {
+  float: left;
+  width: 35%;
+  padding-left: 20px;
+}
+
+.cardAuth {
+   background-color: white;
+   padding: 20px;
+   margin-top: 20px;
+   height: 300px;
+}
+
+.cardAuth h2 {
+  font-size: 17.6px;
+  margin-bottom: 10px;
+}
+
+.cardLogin h2{
+  margin-left: 20px;
+  font-family: 'Ubuntu', sans-serif;
+
+}
+
+.cardAuth p {
+  font-size: 13.2px;
+  margin-bottom: 20px;
+}
+
+.cardAuth i {color: green;}
+
+.cardAuth input,select{
+  width: 50%;
+  padding: 10px;
+  margin-bottom: 15px;
+  margin-left: 20px;
+  display: block;
+  outline: none;
+}
+
+.cardAuth label{
+  font-size: 13px;
+  font-weight: bold;
+  margin-left: 22px;
+  margin-bottom: 5px;
+}
+
+.cardAuth a {
+  text-decoration: none;
+  color: #000;
+}
+
+.cardAuth button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 5px;
+  color: white;
+  background-color: #FF2E2E;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.cardLogin button {
+  margin-left: 20px;
+}
+
+.cardNewUser {
+  border: 1px solid gray;
+}
+
+.cardLogin {
+  height: 350px;
+  border: 1px solid gray;
+}
+
+.cardRegister {
+  height: 710px !important;
+}
+
+.linkRegPage {
+  background: red;
+  width: 100%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.agreedTerms {
+  color: #000;
+  text-decoration: underline !important;
+  font-weight: bold;
+}
+
+.agreedTerms:hover{color: red}
+
+.dontRememberPw {
+  margin-left: 20px;
+  text-decoration: underline !important;
+}
+.dontRememberPw:hover {
+  color: #FF2E2E;
+}
+
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {
+    width: 100%;
+    padding: 0;
+  }
+}

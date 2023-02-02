@@ -1,3 +1,7 @@
+.welcomeMsg {
+  font-size: 15px !important;
+}
+
 .navbar-responsive {
   color: #fff;
   position: absolute;
@@ -42,7 +46,7 @@
 }
 
 .navbar1 {
-  background-color: #AEAEAE !important;
+  background-color: #000 !important;
 }
 
 .navbar {
@@ -61,7 +65,7 @@
 }
 
 .navbar1 .navbar__wrapper .navbar__menu {
-  height: 20px ;
+  height: 30px ;
 }
 
 .navbar .navbar__wrapper .navbar__menu .navbar__nav {

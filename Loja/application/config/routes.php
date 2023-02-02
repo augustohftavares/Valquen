@@ -14,5 +14,10 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 /*
- * MAIN PAGE
+ * AUTH PAGE
  */
+ $route['iniciar_sessao'] = 'Auth/log';
+ $route['registo'] = 'Auth/reg';
+ $route['registar'] = 'Auth/register';
+ $route['entrar'] = 'Auth/login';
+ $route['terminar_sessao'] = 'Auth/logout';

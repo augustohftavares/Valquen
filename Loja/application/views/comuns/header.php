@@ -15,6 +15,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<link href="<?php echo base_url("assets/css/geral.css") ?>" rel="stylesheet" />
 		<link href="<?php echo base_url("assets/css/startpage.css") ?>" rel="stylesheet" />
 		<link href="<?php echo base_url("assets/css/menu.css") ?>" rel="stylesheet" />
+		<link href="<?php echo base_url("assets/css/auth.css") ?>" rel="stylesheet" />
+
+		<link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 		<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

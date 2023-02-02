@@ -64,7 +64,9 @@
  * By default development will show errors but testing and live will hide them.
  */
 switch (ENVIRONMENT)
-{
+{	
+	// 0 - nao mostra erros
+	// -1 - mostra erros
 	case 'development':
 		error_reporting(-1);
 		ini_set('display_errors', 1);

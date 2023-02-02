@@ -30,7 +30,7 @@ $this->load->view('comuns/menu');
       <a href="<?php echo base_url("")?>">
         <div class="cardDestaque">
           <!-- img 300x300 -->
-          <img src="https://www.airjordan-portugal.com/images/airjordan-portugal/Sapatos_Lifestyle_Nike_Air_Jordan_1_Retr-OVBD-64925.jpg" alt="imgteset" />
+          <img src="https://cdn.sneakers123.com/release/962064/conversions/nike-sb-x-ben-jerry-s-dunk-cu3244-100-thumb.jpg" alt="imgteset" />
           <h3>Sapatilhas Nike Air Jordan</h3>
           <p><span class="destaquePrice">120 €</span> <span class="destaquePromotion">99.99 €</span></p>
         </div>

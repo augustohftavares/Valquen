@@ -5,6 +5,11 @@
     font-family: Arial;
 }
 
+.slideShow {
+  width: 100% !important;
+  height: auto !important;
+}
+
 /**
   *  FOOTER
   **/

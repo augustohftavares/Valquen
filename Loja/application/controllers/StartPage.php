@@ -10,7 +10,6 @@ class StartPage extends CI_Controller {
 
 	public function index() {
 		$data['title'] = "Valquen - Loja Online";
-		$data['description'] = "description home page";
 		$this->load->view('index', $data);
 	}//end index
 
