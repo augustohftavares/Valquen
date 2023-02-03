@@ -33,7 +33,7 @@
   margin-bottom: 10px;
 }
 
-.cardLogin h2{
+.cardLogin, .cardContact h2{
   margin-left: 20px;
   font-family: 'Ubuntu', sans-serif;
 
@@ -44,9 +44,9 @@
   margin-bottom: 20px;
 }
 
-.cardAuth i {color: green;}
+.cardAuth i {color: red;}
 
-.cardAuth input,select{
+.cardAuth input,select,textarea{
   width: 50%;
   padding: 10px;
   margin-bottom: 15px;
@@ -79,7 +79,7 @@
   font-size: 18px;
 }
 
-.cardLogin button {
+.cardLogin,.cardContact button {
   margin-left: 20px;
 }
 
@@ -121,6 +121,11 @@
 }
 .dontRememberPw:hover {
   color: #FF2E2E;
+}
+
+.cardContact {
+  height: 620px;
+  border: 1px solid gray;
 }
 
 @media screen and (max-width: 800px) {

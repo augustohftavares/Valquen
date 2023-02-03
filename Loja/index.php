@@ -64,7 +64,7 @@
  * By default development will show errors but testing and live will hide them.
  */
 switch (ENVIRONMENT)
-{	
+{
 	// 0 - nao mostra erros
 	// -1 - mostra erros
 	case 'development':

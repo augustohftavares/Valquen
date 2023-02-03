@@ -77,6 +77,8 @@ class Auth extends CI_Controller {
 
 	 public function login() {
 
+		 $this->load->library('session');
+
 		 $this->form_validation->set_rules('email', 'Endereço de e-mail', 'required');
 		 $this->form_validation->set_rules('password', 'Palavra-passe', 'required');
 
@@ -91,6 +93,16 @@ class Auth extends CI_Controller {
 			 $password = $this->input->post('password');
 			 $user = $this->db->get_where('user', ['email' => $email])->row();
 
+			 $userdata = array(
+				 'name' => $user->name,
+				 'surname' => $user->surname,
+				 'email' => $user->email,
+				 'bithday' => $user->birthday,
+				 'phone' => $user->phone,
+				 'logged_in' => (bool)true
+				);
+			 $this->session->set_userdata('userdata', $userdata);
+
 			 if(!$user) {
 				 $this->session->set_flashdata('login_error', '<p style="color: red; margin-left: 20px;">Por favor verifique o seu email e password e tente novamente.</p>');
 				 redirect(uri_string());
@@ -101,11 +113,7 @@ class Auth extends CI_Controller {
 				 redirect(uri_string());
 			 }
 
-			 $_SESSION['logged_in'] = (bool)true;
-			 $_SESSION['user_name'] = $user->name;
-
 			 redirect(base_url(""), 'refresh');
-			 exit;
 
 		 }
 
@@ -117,16 +125,10 @@ class Auth extends CI_Controller {
     **/
 		public function logout() {
 
+			$this->load->library('session');
+			$this->session->unset_userdata('userdata');
+			redirect(base_url(""));
 
-			if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
-
-				unset($_SESSION['logged_in']);
-				unset($_SESSION['user_name']);
-				$_SESSION['logged_in'] = (bool)false;
-				redirect(base_url("iniciar_sessao"), 'refresh');
-
-			} else
-				redirect('/', 'refresh');
 		}//end logout
 
 }//end class StartPage

@@ -31,6 +31,20 @@ $this->load->view('comuns/menu');
       <label class="formLabel" for="content">Descrição do produto:</label>
       <textarea class="passAuth" type="text" align="center" name="content" value="<?php echo $product['content'] ?>" placeholder="Descrição do produto"><?php echo $product['content'] ?></textarea>
 
+      <label class="formLabel" for="hot">Em destaque:</label>
+      <select class="passAuth" name="hot">
+        <option value="">
+          <?php
+            if($product['hot'] == 0)
+              echo "Não está em destaque";
+            else if($product['hot'] == 1)
+              echo "Está em destaque";
+          ?>
+        </option>
+        <option value="0">Não</option>
+        <option value="1">Meter em destaque</option>
+      </select>
+
       <input type="hidden" name="id" value="<?php echo $product['id']?>" />
       <input type="hidden" name="userId" value="<?php echo $product['userId']?>" />
       <input type="hidden" name="publishedAt" value="<?php echo $product['publishedAt']?>" />

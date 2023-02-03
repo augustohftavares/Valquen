@@ -1,7 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-
 <!DOCTYPE html>
 
 <html lang="pt">
@@ -16,6 +15,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<link href="<?php echo base_url("assets/css/startpage.css") ?>" rel="stylesheet" />
 		<link href="<?php echo base_url("assets/css/menu.css") ?>" rel="stylesheet" />
 		<link href="<?php echo base_url("assets/css/auth.css") ?>" rel="stylesheet" />
+		<link href="<?php echo base_url("assets/css/contact.css") ?>" rel="stylesheet" />
+		<link href="<?php echo base_url("assets/css/footer.css") ?>" rel="stylesheet" />
 
 		<link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
 

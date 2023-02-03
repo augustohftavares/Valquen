@@ -14,7 +14,7 @@ class Dashboard extends CI_Controller {
 		$data['title'] = "Valquen - Dashboard";
 
 		// COUNT USERS
-		$users =  $this->user_model->GetAll('username');
+		$users =  $this->user_model->GetAll('name');
 		$data['usersTotal'] = count($users);
 
 		//COUNT PRODUCTS

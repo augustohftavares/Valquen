@@ -1,32 +1,30 @@
-
 <div class="header">
   <div class="navbar navbar1">
     <div class="navbar__wrapper">
       <nav class="navbar__menu">
 
-
           <a class="navbar__brand welcomeMsg" href="<?php echo base_url("")?>">
-            <?php if(!$_SESSION['logged_in'] === FALSE): ?>
-              Bem-Vindo <?php echo $_SESSION['user_name'] ?>
-            <?php endif; ?>
+            <?php
+              echo "Bem-vindo ";
+            ?>
           </a>
 
         <ul class="navbar__nav">
 
           <li class="navbar__link after-transform">
-            <?php if(!$_SESSION['logged_in'] === TRUE): ?>
               <a href="<?php echo base_url("iniciar_sessao")?>">
-                Iniciar Sessão
+                <?php
+                  echo "Iniciar Sessão";
+                ?>
               </a>
-            <?php endif; ?>
           </li>
 
           <li class="navbar__link after-transform">
-            <?php if(!$_SESSION['logged_in'] === FALSE): ?>
               <a href="<?php echo base_url("terminar_sessao")?>">
-                Terminar Sessão
+                <?php
+                  echo "Terminar Sessão";
+                ?>
               </a>
-            <?php endif; ?>
           </li>
 
         </ul>
@@ -44,7 +42,7 @@
           <li class="navbar__link after-transform"><a href="<?php echo base_url("")?>">Ofertas do Dia</a></li>
           <li class="navbar__link after-transform"><a href="<?php echo base_url("")?>">Livros</a></li>
           <li class="navbar__link after-transform"><a href="<?php echo base_url("")?>">Eletrónicos</a></li>
-          <li class="navbar__link after-transform"><a href="<?php echo base_url("")?>">Atendimento ao Cliente</a></li>
+          <li class="navbar__link after-transform"><a href="<?php echo base_url("atendimento_ao_cliente")?>">Atendimento ao Cliente</a></li>
         </ul>
       </nav>
     </div>
@@ -57,7 +55,7 @@
       <li class="navbar-responsive__link after-transform"><a href="<?php echo base_url("")?>">Ofertas do Dia</a></li>
       <li class="navbar-responsive__link after-transform"><a href="<?php echo base_url("")?>">Livros</a></li>
       <li class="navbar-responsive__link after-transform"><a href="<?php echo base_url("")?>">Eletrónicos</a></li>
-      <li class="navbar-responsive__link after-transform"><a href="<?php echo base_url("")?>">Atendimento ao Cliente</a></li>
+      <li class="navbar-responsive__link after-transform"><a href="<?php echo base_url("atendimento_ao_cliente")?>">Atendimento ao Cliente</a></li>
     </ul>
   </div>
 </div>

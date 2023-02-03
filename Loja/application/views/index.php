@@ -25,18 +25,20 @@ $this->load->view('comuns/menu');
 
 <div class="divEmDestaque">
   <div class="divEmDestaqueSize">
-    <h2>Top Destaques</h2>
-    <div class="emDestaqueColumn">
-      <a href="<?php echo base_url("")?>">
-        <div class="cardDestaque">
-          <!-- img 300x300 -->
-          <img src="https://cdn.sneakers123.com/release/962064/conversions/nike-sb-x-ben-jerry-s-dunk-cu3244-100-thumb.jpg" alt="imgteset" />
-          <h3>Sapatilhas Nike Air Jordan</h3>
-          <p><span class="destaquePrice">120 €</span> <span class="destaquePromotion">99.99 €</span></p>
-        </div>
-      </a>
-    </div>
+    <h2>Promoções</h2>
+    <?php foreach ($hotProducts as $row): ?>
 
+      <div class="emDestaqueColumn">
+        <a href="<?php echo base_url("")?>">
+          <div class="cardDestaque">
+            <!-- img 300x300 -->
+            <img src="https://cdn.sneakers123.com/release/962064/conversions/nike-sb-x-ben-jerry-s-dunk-cu3244-100-thumb.jpg" alt="imgteset" />
+            <h3><?php echo $row->title ?></h3>
+            <p><span class="destaquePrice"><?php echo $row->discount?> €</span> <span class="destaquePromotion"><?php echo $row->price?> €</span></p>
+          </div>
+        </a>
+      </div>
+    <?php endforeach; ?>
   </div>
 
 </div>

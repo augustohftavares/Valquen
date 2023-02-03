@@ -21,3 +21,8 @@ $route['translate_uri_dashes'] = FALSE;
  $route['registar'] = 'Auth/register';
  $route['entrar'] = 'Auth/login';
  $route['terminar_sessao'] = 'Auth/logout';
+
+/*
+ * CONTACT PAGE
+ */
+$route['atendimento_ao_cliente'] = 'Contact/index';
