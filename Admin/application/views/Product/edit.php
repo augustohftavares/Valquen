@@ -7,9 +7,6 @@ $this->load->view('comuns/header');
 $this->load->view('comuns/menu');
 ?>
 
-<!-- CONTENT HERE-->
-<?php if(!$_SESSION['logged_in'] === FALSE): ?>
-
   <div class="mainEdit">
 
     <p class="sign" align="center">Editar Produto #<?php echo $product['id']?></p>
@@ -53,11 +50,6 @@ $this->load->view('comuns/menu');
 
   </div>
 
-<?php else: ?>
-
-<p class="msgLogIn">Inicia sessão para que possas aceder a esta aplicação</p>
-
-<?php endif; ?>
 <?php
 $this->load->view('comuns/footer');
 ?>

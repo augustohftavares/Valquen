@@ -8,7 +8,6 @@ $this->load->view('comuns/menu');
 ?>
 
 <!-- CONTENT HERE-->
-<?php if(!$_SESSION['logged_in'] === FALSE): ?>
 
 
   <div class="mainEdit">
@@ -47,11 +46,6 @@ $this->load->view('comuns/menu');
 
   </div>
 
-<?php else: ?>
-
-<p class="msgLogIn">Inicia sessão para que possas aceder a esta aplicação</p>
-
-<?php endif; ?>
 <?php
 $this->load->view('comuns/footer');
 ?>

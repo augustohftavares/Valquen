@@ -32,6 +32,11 @@ $this->load->view('comuns/menu');
       </form>
 
     </div>
+    <p class="termsConditionsText">This website is secure and your personal details are protected. For more information, view our
+      <a href="<?php echo base_url("")?>">Terms & Conditions</a> and our
+      <a href="<?php echo base_url("")?>">Security, Privacy & Cookie Policy.</a>
+    </p>
+
   </div>
 
   <div class="rightcolumn">
@@ -45,6 +50,7 @@ $this->load->view('comuns/menu');
     </div>
 
   </div>
+
 
 </div>
 

@@ -10,6 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<meta charset="utf-8">
 		<title><?php echo $title ?></title>
 
+		<link href='https://fonts.googleapis.com/css?family=EB Garamond' rel='stylesheet'>
 
 		<link href="<?php echo base_url("assets/css/geral.css") ?>" rel="stylesheet" />
 		<link href="<?php echo base_url("assets/css/startpage.css") ?>" rel="stylesheet" />

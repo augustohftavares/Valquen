@@ -33,10 +33,13 @@
   margin-bottom: 10px;
 }
 
-.cardLogin, .cardContact h2{
+.cardLogin h2, .cardContact h2{
   margin-left: 20px;
   font-family: 'Ubuntu', sans-serif;
+}
 
+.cardLogin button {
+  margin-left: 20px;
 }
 
 .cardAuth p {
@@ -83,6 +86,8 @@
   margin-left: 20px;
 }
 
+.cardContact textarea {resize: none;}
+
 .cardNewUser {
   border: 1px solid gray;
 }
@@ -124,9 +129,24 @@
 }
 
 .cardContact {
-  height: 620px;
+  height: 640px;
   border: 1px solid gray;
 }
+
+.termsConditionsText {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 13px;
+}
+
+.termsConditionsText a {
+  text-decoration: underline;
+  font-weight: bold;
+  color: gray;
+
+}
+
+.termsConditionsText a:hover {color: red;}
 
 @media screen and (max-width: 800px) {
   .leftcolumn, .rightcolumn {

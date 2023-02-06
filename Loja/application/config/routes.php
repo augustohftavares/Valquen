@@ -25,4 +25,5 @@ $route['translate_uri_dashes'] = FALSE;
 /*
  * CONTACT PAGE
  */
-$route['atendimento_ao_cliente'] = 'Contact/index';
+ $route['atendimento_ao_cliente'] = 'Contact/index';
+ $route['enviar_formulario'] = 'Contact/Save';

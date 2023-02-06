@@ -60,59 +60,52 @@ class Auth extends CI_Controller {
 
 	}//end register
 
-  /**
-  ** Login System
-  **
-  ** @param none
-  ** @return NULL
-  **/
-  public function login(){
+	/**	Login System
+ 	 *	@param none
+ 	 *	@return NULL
+   **/
 
-    $inputs = array(
-      "email" => $this->input->post('email'),
-			"password" => $this->input->post('password'),
-    );
+	 public function login() {
 
-    $query = $this->db->get_where('admin');
-    $admin_row = $query->row();
+		 $this->load->library('session');
 
-    if(password_verify($inputs["password"], $admin_row->password)) {
+		 $this->form_validation->set_rules('email', 'Endereço de e-mail', 'required');
+		 $this->form_validation->set_rules('password', 'Palavra-passe', 'required');
 
-      $inputs["password"] = $admin_row->password;
-      $this->db->where('email', $inputs["email"]);
-			$this->db->where('password', $inputs["password"]);
+		 if($this->form_validation->run() == FALSE) {
 
-      $query = $this->db->get('admin');
-      $find_admin = $query->num_rows($query);
+			 $data['title'] = "Valquen - Iniciar Sessão";
+			 $this->session->set_flashdata('login_error', '<p class="alertLogin"><i class="bx bx-chevron-right bx-fade-left"></i> Por favor verifique o seu email e password e tente novamente.</p>');
+			 $this->load->view('Auth/login', $data);
 
-      if($find_admin > 0){
-				date_default_timezone_set('Europe/Lisbon');
-				$updateData = [
-   				'lastLogin' => date('Y-m-d H:i:s')
-				];
+		 } else {
 
-				$this->db->where('email', $inputs["email"]);
-				$this->db->update('user', $updateData);
+			 $email = $this->input->post('email');
+			 $password = $this->input->post('password');
+			 $admin = $this->db->get_where('admin', ['email' => $email])->row();
 
-				$_SESSION['logged_in'] = (bool)TRUE;
-				$_SESSION['username'] = $admin_row->username;
-				$_SESSION['admin_id'] = $admin_row->id;
-        $this->session->set_flashdata('login_success', '');
-        redirect(base_url("dashboard"), 'refresh');
+			 $userdata = array(
+				 'username' => $admin->username,
+				 'email' => $admin->email,
+				 'logged_in' => (bool)true
+				);
+			 $this->session->set_userdata('userdata', $userdata);
 
-      } else {
+			 if(!$admin) {
+				 $this->session->set_flashdata('login_error', '<p class="alertLogin"><i class="bx bx-chevron-right bx-fade-left"></i> Por favor verifique o seu email e password e tente novamente.</p>');
+				 redirect(uri_string());
+			 }
 
-        $this->session->set_flashdata('login_error', 'Houve um problema interno, contate um programador');
-        redirect(base_url("iniciar_sessao"), 'refresh');
+			 if(!password_verify($password, $admin->password)){
+				 $this->session->set_flashdata('login_error', '<p class="alertLogin"><i class="bx bx-chevron-right bx-fade-left"></i> Por favor verifique o seu email e password e tente novamente.</p>');
+				 redirect(uri_string());
+			 }
 
-      }
+			 redirect(base_url("dashboard"), 'refresh');
 
-    } else {
-      $this->session->set_flashdata('form_error', 'O campo email ou o campo password estão errados ou vazios');
-      redirect(base_url("iniciar_sessao"), 'refresh');
-    }
+		 }
 
-  }//end login
+	 }//end login
 
 
 	/**

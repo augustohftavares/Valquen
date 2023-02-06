@@ -10,6 +10,49 @@
   height: auto !important;
 }
 
-/**
-  *  FOOTER
-  **/
+.formErrorr {
+  margin-left: 20px;
+  color: red;
+  font-size: 13px;
+}
+
+.formSuccess {
+  background-color: #8AFF8A;
+  margin-left: 20px;
+  color: #000;
+  font-size: 13px;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+
+.input-search {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 40%;
+  margin-bottom: 15px;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.iconsearch {
+  padding: 10px;
+  background: #FF2E2E;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: 1px solid #fff;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+}
+
+.formSuccess i {color: #000 !important }

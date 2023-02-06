@@ -7,16 +7,10 @@ $this->load->view('comuns/header');
   <div class="mainAuth">
 
     <p class="sign" align="center">Iniciar Sessão</p>
-    <?php if ($this->session->flashdata('form_error') == TRUE) : ?>
-				<div class="msg_formError">
-					<?php echo "<i class='bx bx-right-arrow-alt bx-fade-left' ></i>" . $this->session->flashdata('form_error'); ?>
-				</div>
-		<?php endif ?>
-    <?php if ($this->session->flashdata('login_error') == TRUE) : ?>
-				<div class="msg_formError">
-					<?php echo "<i class='bx bx-right-arrow-alt bx-fade-left' ></i>" . $this->session->flashdata('login_error'); ?>
-				</div>
-		<?php endif ?>
+    <?php
+      if ($this->session->flashdata('login_error') == TRUE)
+        echo $this->session->flashdata('login_error');
+    ?>
     <form class="formAuth" action="<?php echo base_url("entrar") ?>" method="post">
 
       <label for="email"></label>
@@ -29,7 +23,9 @@ $this->load->view('comuns/header');
       <input type="hidden" name="lastLogin" value="<?php $newDate ?>" />
 
       <button class="submitAuth linkAuth" type="submit" align="center">Entrar</button>
+    </form>
 
+    <p class="infoMsgLogin"><i class='bx bxs-error'></i> Esta aplicação deverá ser acessada apenas por administradores da Valquen Solutions.</p>
   </div>
 
 <!-- body end in comuns/footer -->

@@ -27,21 +27,17 @@
 <div id="menu">
   <span class="menuTitle" onclick="openNav()">&#9776; <?php echo $title ?></span>
 
-  <?php if(!$_SESSION['logged_in'] === FALSE): ?>
   <span class="authV">
     <a href="<?php echo base_url("terminar_sessao")?>">
       <i class='bx bx-log-in' ></i>
     </a>
   </span>
-  <?php endif;?>
 
-  <?php if(!$_SESSION['logged_in'] === TRUE): ?>
     <span class="authVV">
       <a href="<?php echo base_url("iniciar_sessao")?>">
         Iniciar Sessão
       </a>
     </span>
-  <?php endif; ?>
 
 </div>
 

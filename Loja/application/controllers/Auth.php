@@ -94,14 +94,13 @@ class Auth extends CI_Controller {
 			 $user = $this->db->get_where('user', ['email' => $email])->row();
 
 			 $userdata = array(
+				 'id' => $user->id,
 				 'name' => $user->name,
 				 'surname' => $user->surname,
 				 'email' => $user->email,
-				 'bithday' => $user->birthday,
-				 'phone' => $user->phone,
 				 'logged_in' => (bool)true
 				);
-			 $this->session->set_userdata('userdata', $userdata);
+			 $this->session->set_userdata('userinfo', $userdata);
 
 			 if(!$user) {
 				 $this->session->set_flashdata('login_error', '<p style="color: red; margin-left: 20px;">Por favor verifique o seu email e password e tente novamente.</p>');
@@ -127,6 +126,10 @@ class Auth extends CI_Controller {
 
 			$this->load->library('session');
 			$this->session->unset_userdata('userdata');
+			$this->session->userdata['userinfo']['logged_in'] = false;
+			$this->session->userdata['userinfo']['name'] = "";
+			$this->session->userdata['userinfo']['surname'] = "";
+			$this->session->userdata['userinfo']['email'] = "";
 			redirect(base_url(""));
 
 		}//end logout

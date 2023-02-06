@@ -8,7 +8,6 @@ $this->load->view('comuns/menu');
 ?>
 
 <!-- CONTENT HERE-->
-<?php if(!$_SESSION['logged_in'] === FALSE): ?>
 
   <div class="cardUserDetail">
     <img src="<?php echo base_url("assets/img/augusto.png") ?>" alt="<?php echo $user['username'] ?>" style="width:100%">
@@ -29,11 +28,6 @@ $this->load->view('comuns/menu');
       </a>
   </div>
 
-<?php else: ?>
-
-<p class="msgLogIn">Inicia sessão para que possas aceder a esta aplicação</p>
-
-<?php endif; ?>
 <?php
 $this->load->view('comuns/footer');
 ?>

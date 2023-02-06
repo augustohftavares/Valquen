@@ -138,3 +138,20 @@
   padding-right: 40px;
   padding-top: 10px;
 }
+
+.alertLogin {
+  color: red;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.infoMsgLogin {
+  color: gray;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 30px;
+
+}
+
+.infoMsgLogin i {color: red}

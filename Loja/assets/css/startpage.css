@@ -7,7 +7,6 @@
   display:none;
   width: 100%;
   margin: auto;
-  height: 400px;
   pointer-events: none;
 }
 
@@ -38,6 +37,12 @@
 .divEmDestaque h2{
   text-transform: uppercase;
   margin-bottom: 20px;
+  font-family: 'EB Garamond' , sans-serif, arial;
+  font-size: 30px;
+}
+
+.divEmDestaque h2 span{
+  font-family: 'EB Garamond' , sans-serif, arial;
 }
 
 .divEmDestaque:after {
@@ -50,7 +55,8 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 16px;
   text-align: center;
-  background-color: #f1f1f1;
+  background-color: #fff;
+  border-radius: 5px;
 }
 
 .cardDestaque img {
@@ -87,6 +93,98 @@
 
 @media screen and (max-width: 1000px) {
   .emDestaqueColumn {
+    width: 50%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* MARCAS */
+
+.divMarcas{margin-top: 40px; }
+
+.divMarcasSize {
+  width: 90%;
+  margin: auto;
+}
+
+.divMarcas h2{
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-family: 'EB Garamond' , sans-serif, arial;
+  font-size: 30px;
+}
+
+.divMarcas:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.marcasColumn {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+.cardMarcas{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.cardMarcas:hover {opacity: 0.5}
+
+@media screen and (max-width: 1000px) {
+  .marcasColumn {
+    width: 50%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* inform */
+
+.divInform{
+  margin-top: 40px;
+  padding: 40px;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
+
+.divInformSize {
+  width: 100%;
+  margin: auto;
+}
+
+.divInform:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.informColumn {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+
+}
+
+.cardInform {
+  text-align: center;
+  font-size: 50px;
+}
+
+.cardInform h3 {
+  color: #000;
+  font-family: 'EB Garamond' , sans-serif, arial;
+  font-size: 30px;
+}
+
+@media screen and (max-width: 1000px) {
+  .informColumn {
     width: 50%;
     display: block;
     margin-bottom: 20px;
