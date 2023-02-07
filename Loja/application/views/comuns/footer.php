@@ -4,8 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <footer class="footer-distributed">
 
 	<div class="footer-left">
-		<h2>Valquen</h2>
-		<h3>Sobre<span>Valquen</span></h3>
+		<img class="logoFooter" src="<?php echo base_url("assets/img/logo_2.png")?>" alt="logo" />
 
 		<p class="footer-links">
 			<a href="<?php echo base_url("")?>">Inicio</a>

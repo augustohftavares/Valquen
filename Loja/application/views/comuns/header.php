@@ -9,6 +9,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		<meta charset="utf-8">
 		<title><?php echo $title ?></title>
+		<link rel="icon" href="<?php echo base_url("assets/img/logo_sem_bg_1000x1000.png") ?>">
+
 
 		<link href='https://fonts.googleapis.com/css?family=EB Garamond' rel='stylesheet'>
 
@@ -18,6 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<link href="<?php echo base_url("assets/css/auth.css") ?>" rel="stylesheet" />
 		<link href="<?php echo base_url("assets/css/contact.css") ?>" rel="stylesheet" />
 		<link href="<?php echo base_url("assets/css/footer.css") ?>" rel="stylesheet" />
+		<link href="<?php echo base_url("assets/css/account_settings.css") ?>" rel="stylesheet" />
 
 		<link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
 

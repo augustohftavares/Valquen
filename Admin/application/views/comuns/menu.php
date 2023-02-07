@@ -1,54 +1,60 @@
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <h2><i class='bx bxs-virus'></i> Admin Panel</h2>
-  <hr />
-  <a href="<?php echo base_url("dashboard")?>">
-    <i class='bx bxs-dashboard'></i>
-    <span>Dashboard</span>
-  </a>
-  <a href="<?php echo base_url("utilizadores")?>">
-    <i class='bx bxs-user'></i>
-    <span>Utilizadores - Gestão de utilziadores</span>
-  </a>
-  <a href="<?php echo base_url("produtos")?>">
-    <i class='bx bxs-shopping-bag'></i>
-    <span>Produtos - Gestão de produtos</span>
-  </a>
-  <a href="<?php echo base_url("contatos")?>">
-    <i class='bx bxs-spreadsheet'></i>
-    <span>Contatos - Gerir todos os pedidos de ajuda/dúvidas dos utilizadores</span>
-  </a>
-  <a href="<?php echo base_url("criar_administrador")?>">
-    <i class='bx bx-user-plus'></i>
-    <span>Criar conta administrador</span>
-  </a>
-</div>
-
-<div id="menu">
-  <span class="menuTitle" onclick="openNav()">&#9776; <?php echo $title ?></span>
-
-  <span class="authV">
-    <a href="<?php echo base_url("terminar_sessao")?>">
-      <i class='bx bx-log-in' ></i>
-    </a>
-  </span>
-
-    <span class="authVV">
-      <a href="<?php echo base_url("iniciar_sessao")?>">
-        Iniciar Sessão
+<div class="area"></div>
+<nav class="main-menu">
+  <ul>
+    <li>
+      <a href="https://jbfarrow.com">
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+        <span class="nav-text">
+          Dashboard
+        </span>
       </a>
-    </span>
 
-</div>
+    </li>
+    <li class="has-subnav">
+      <a href="#">
+        <i class="fa fa-globe fa-2x"></i>
+        <span class="nav-text">
+          Utilizadores
+        </span>
+      </a>
 
-<script>
-  function openNav() {
-    document.getElementById("mySidenav").style.width = "100%";
-    document.getElementById("menu").style.marginLeft = "250px";
-  }
+    </li>
+    <li class="has-subnav">
+      <a href="#">
+        <i class="fa fa-comments fa-2x"></i>
+        <span class="nav-text">
+          Produtos
+        </span>
+      </a>
 
-  function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("menu").style.marginLeft= "0";
-  }
-</script>
+    </li>
+    <li class="has-subnav">
+      <a href="#">
+        <i class="fa fa-camera-retro fa-2x"></i>
+        <span class="nav-text">
+          Contatos
+        </span>
+      </a>
+
+    </li>
+    <li>
+      <a href="#">
+        <i class="fa fa-film fa-2x"></i>
+        <span class="nav-text">
+          Criar administrador
+        </span>
+      </a>
+    </li>
+  </ul>
+
+  <ul class="logout">
+    <li>
+      <a href="#">
+        <i class="fa fa-power-off fa-2x"></i>
+        <span class="nav-text">
+          Logout
+        </span>
+      </a>
+    </li>
+  </ul>
+</nav>

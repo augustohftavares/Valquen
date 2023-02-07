@@ -2,3 +2,5 @@ https://mysql.tutorials24x7.com/blog/guide-to-design-database-for-shopping-cart-
 
 BANNERS
 https://www.freepik.com/photo-editor/new-artboard?photo=https%3A%2F%2Fdownloadscdn7.freepik.com%2F1361%2F4%2F3597.jpg%3Ffilename%3Dred-black-brush-stroke-banner-background-perfect-canva%26token%3Dexp%3D1675093427%7Ehmac%3Dc71ba03c4f7b1a5d4e233213b1020059&from_view=detail&id=19564593
+
+https://fontawesome.com/v4/icons/

@@ -1,0 +1,108 @@
+.container {
+  width: 80%;
+  height: 500px;
+  padding-top:20px;
+  padding-left:15px;
+  padding-right:15px;
+  margin: auto;
+  margin-top: 40px;
+}
+
+#st-box {
+  float:left;
+  width:230px;
+  height:160px;
+  background-color:white;
+}
+
+#nd-box {
+  float:left;
+  width:800px;
+  height:400px;
+  background-color:white;
+  border: 1px solid gray;
+  margin-left:20px;
+}
+
+.account_settings_div {
+  height: 300px;
+  margin: auto;
+  margin-top: 50px;
+  margin-left: 200px;
+
+}
+
+.sidebarAccountSettings{
+  margin: 0;
+  padding: 0;
+  height: 400px;
+  background-color: #fff;
+  border: 1px solid gray;
+}
+
+.sidebarAccountSettings a {
+  font-size: 14px;
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.sidebarAccountSettings a:hover:not(.active) {
+  background-color: #FF2E2E;
+  color: white;
+}
+
+#nd-box h2 {
+  font-family: 'EB Garamond' , sans-serif, arial;
+  margin-left: 20px;
+  border-bottom: 1px solid gray;
+  width: 250px;
+  margin-bottom: 10px;
+ }
+
+#nd-box label {
+  font-size: 13px;
+  font-weight: bold;
+  margin-left: 22px;
+  margin-bottom: 5px;
+}
+
+#nd-box input {
+  width: 60%;
+  padding: 10px;
+  margin-bottom: 15px;
+  margin-left: 20px;
+  display: block;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+#nd-box input:read-only {
+  background: #C5C5C5;
+  border: none;
+}
+
+#nd-box button{
+  margin-left: 20px;
+  padding: 10px;
+  color: #fff;
+  background-color: #FF2E2E;
+  border: none;
+  font-size: 13px;
+}
+
+#nd-box button:hover{opacity: 0.8}
+
+
+@media screen and (max-width: 1400px) {
+  #nd-box {
+    width: 504px;
+    height: 400px;
+  }
+
+  #nd-box input {
+    width: 90%;
+  }
+}

@@ -16,12 +16,32 @@ class Auth extends CI_Controller {
 
 	public function log() {
 		$data['title'] = "Valquen - Iniciar Sessão";
+
+		if(!isset($this->session->userdata['userinfo']['logged_in']) || $this->session->userdata['userinfo']['logged_in'] == TRUE )
+			redirect(base_url(""), 'refresh');
+
 		$this->load->view('Auth/login', $data);
 	}
 
 	public function reg() {
 		$data['title'] = "Valquen - Registo";
 		$this->load->view('Auth/register', $data);
+	}
+
+	public function account_details() {
+		$data['title'] = "Valquen - Informações da Conta";
+
+		$id = $this->session->userdata['userinfo']['id'];
+
+		if(is_null($id))
+			redirect(base_url("iniciar_sessao"), 'refresh');
+
+		if(!isset($this->session->userdata['userinfo']['logged_in']) || $this->session->userdata['userinfo']['logged_in'] == FALSE )
+			redirect(base_url("iniciar_sessao"), 'refresh');
+
+		$data['userprofile'] = $this->auth_model->GetById($id);
+
+		$this->load->view('Auth/account_details', $data);
 	}
 
 
@@ -95,9 +115,12 @@ class Auth extends CI_Controller {
 
 			 $userdata = array(
 				 'id' => $user->id,
+				 'title' => $user->title,
 				 'name' => $user->name,
 				 'surname' => $user->surname,
 				 'email' => $user->email,
+				 'phone' => $user->phone,
+				 'createdAt' => $user->createdAt,
 				 'logged_in' => (bool)true
 				);
 			 $this->session->set_userdata('userinfo', $userdata);
@@ -127,9 +150,13 @@ class Auth extends CI_Controller {
 			$this->load->library('session');
 			$this->session->unset_userdata('userdata');
 			$this->session->userdata['userinfo']['logged_in'] = false;
+			$this->session->userdata['userinfo']['id'] = "";
+			$this->session->userdata['userinfo']['title'] = "";
 			$this->session->userdata['userinfo']['name'] = "";
 			$this->session->userdata['userinfo']['surname'] = "";
 			$this->session->userdata['userinfo']['email'] = "";
+			$this->session->userdata['userinfo']['phone'] = "";
+			$this->session->userdata['userinfo']['createdAt'] = "";
 			redirect(base_url(""));
 
 		}//end logout

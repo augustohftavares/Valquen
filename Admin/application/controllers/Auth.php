@@ -75,7 +75,6 @@ class Auth extends CI_Controller {
 		 if($this->form_validation->run() == FALSE) {
 
 			 $data['title'] = "Valquen - Iniciar Sessão";
-			 $this->session->set_flashdata('login_error', '<p class="alertLogin"><i class="bx bx-chevron-right bx-fade-left"></i> Por favor verifique o seu email e password e tente novamente.</p>');
 			 $this->load->view('Auth/login', $data);
 
 		 } else {
@@ -84,24 +83,26 @@ class Auth extends CI_Controller {
 			 $password = $this->input->post('password');
 			 $admin = $this->db->get_where('admin', ['email' => $email])->row();
 
-			 $userdata = array(
+			 $admindata = array(
+				 'id' => $admin->id,
 				 'username' => $admin->username,
 				 'email' => $admin->email,
+				 'createdAt' => $admin->createdAt,
 				 'logged_in' => (bool)true
 				);
-			 $this->session->set_userdata('userdata', $userdata);
+			 $this->session->set_userdata('userinfo', $admindata);
 
 			 if(!$admin) {
-				 $this->session->set_flashdata('login_error', '<p class="alertLogin"><i class="bx bx-chevron-right bx-fade-left"></i> Por favor verifique o seu email e password e tente novamente.</p>');
+				 $this->session->set_flashdata('login_error', '<p style="color: red; margin-left: 20px;">Por favor verifique o seu email e password e tente novamente.</p>');
 				 redirect(uri_string());
 			 }
 
 			 if(!password_verify($password, $admin->password)){
-				 $this->session->set_flashdata('login_error', '<p class="alertLogin"><i class="bx bx-chevron-right bx-fade-left"></i> Por favor verifique o seu email e password e tente novamente.</p>');
+				 $this->session->set_flashdata('login_error', '<p style="color: red; margin-left: 20px;">Por favor verifique o seu email e password e tente novamente.</p>');
 				 redirect(uri_string());
 			 }
 
-			 redirect(base_url("dashboard"), 'refresh');
+			 redirect(base_url("Dashboard"), 'refresh');
 
 		 }
 
@@ -116,16 +117,13 @@ class Auth extends CI_Controller {
   **/
 	public function logout() {
 
-		if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
-			//foreach ($_SESSION as $key => $value) {
-				//unset($_SESSION[$key]);
-			//}
-			unset($_SESSION['logged_in']);
-			unset($_SESSION['username']);
-			$_SESSION['logged_in'] = (bool)false;
-			redirect(base_url("iniciar_sessao"), 'refresh');
-		} else
-			redirect('/', 'refresh');
+		$this->load->library('session');
+		$this->session->unset_userdata('userdata');
+		$this->session->userdata['userinfo']['logged_in'] = false;
+		$this->session->userdata['userinfo']['username'] = "";
+		$this->session->userdata['userinfo']['email'] = "";
+		$this->session->userdata['userinfo']['createdAt'] = "";
+		redirect(base_url(""));
 
 	}//end logout
 
