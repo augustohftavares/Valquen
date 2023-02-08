@@ -32,71 +32,88 @@
   text-align: center;
 }
 
-.divEmDestaque{margin-top: 40px; }
+/* PRODUTOS POPULARES */
 
-.divEmDestaque h2{
+.popularTitle{
   text-transform: uppercase;
   margin-bottom: 20px;
   font-family: 'EB Garamond' , sans-serif, arial;
   font-size: 30px;
-}
-
-.divEmDestaque h2 span{
-  font-family: 'EB Garamond' , sans-serif, arial;
-}
-
-.divEmDestaque:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.cardDestaque{
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 16px;
   text-align: center;
-  background-color: #fff;
-  border-radius: 5px;
+  margin-top: 30px
 }
 
-.cardDestaque img {
-  border-bottom: 1px solid #000;
-  margin-bottom: 10px;
+.Items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-
-.divEmDestaque a {
-  color: #000;
+.Item {
+  padding: 20px 0;
+  width: 30%;
+  transition: box-shadow, 0.4s, ease-in-out;
+  border-radius: 3px;
+}
+@media (max-width: 1050px) {
+  .Item {
+    width: 48%;
+  }
+}
+@media (max-width: 600px) {
+  .Item {
+    width: 100%;
+  }
+}
+.Item__link {
   text-decoration: none;
 }
-
-.emDestaqueColumn {
-  float: left;
-  width: 25%;
-  padding: 0 10px;
-}
-
-.divEmDestaqueSize {
+.Item__title {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9em;
+  color: #555;
   width: 90%;
-  margin: auto;
+  margin: 20px auto 0;
+}
+.Item__price {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9em;
+  margin-top: 10px;
+  color: #777;
+}
+.ImageContainer {
+  position: relative !important;
+  width: 100%;
+  height: auto;
+}
+.Image {
+  display: block !important;
+  width: 100%;
+  height: auto;
 }
 
-.destaquePrice {
-  font-size: 20px;
-  color: red;
+.overlay {
+  position: absolute !important;
+  bottom: 0 !important;
+  background: rgb(0, 0, 0) !important;
+  background: rgba(0, 0, 0, 0.5) !important; /* Black see-through */
+  color: #f1f1f1 !important;
+  width: 100% !important;
+  transition: .5s ease !important;
+  opacity:0 !important;
+  color: white !important;
+  font-size: 20px !important;
+  padding: 20px !important;
+  text-align: center !important;
 }
 
-.destaquePromotion {
-  font-size: 15px;
-  text-decoration: line-through;
-  color: gray;
-}
-
-@media screen and (max-width: 1000px) {
-  .emDestaqueColumn {
-    width: 50%;
-    display: block;
-    margin-bottom: 20px;
-  }
+.ImageContainer:hover .overlay {
+  opacity: 1 !important;
 }
 
 /* MARCAS */

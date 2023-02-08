@@ -23,27 +23,34 @@ $this->load->view('comuns/menu');
   </div>
 </div>
 
-<div class="divEmDestaque">
-  <div class="divEmDestaqueSize">
-    <h2>Produtos SUPER<span style="color: red;">HOT</span></h2>
-    <?php foreach ($hotProducts as $row): ?>
+<h2 class="popularTitle">Produtos Populares</h2>
 
-      <div class="emDestaqueColumn">
-        <a href="<?php echo base_url("")?>">
-          <div class="cardDestaque">
-            <!-- img 300x300 -->
-            <img src="https://cdn.sneakers123.com/release/962064/conversions/nike-sb-x-ben-jerry-s-dunk-cu3244-100-thumb.jpg" alt="imgteset" />
-            <h3><?php echo $row->title ?></h3>
-            <p><span class="destaquePrice"><?php echo $row->discount?> €</span> <span class="destaquePromotion"><?php echo $row->price?> €</span></p>
-          </div>
-        </a>
-      </div>
-    <?php endforeach; ?>
-  </div>
+<div class="Items">
+
+  <?php foreach ($hotProducts as $row): ?>
+
+    <div class="Item">
+
+      <a href="<?php echo base_url("") ?>" class="Item__link">
+
+        <div class="ImageContainer">
+          <img src="https://www.prada.com/content/dam/pradabkg_products/2/29Y/29Y088/11WPF0002/29Y088_11WP_F0002_S_222_SLF.jpg/jcr:content/renditions/cq5dam.web.hebebed.1000.1000.crop.jpg" alt="" class="Image">
+          <div class="overlay">Ver</div>
+        </div>
+
+        <div class="Item__title"><?php echo $row->title ?></div>
+        <div class="Item__price">€<?php echo $row->price ?></div>
+
+      </a>
+
+    </div>
+
+  <?php endforeach; ?>
+
 
 </div>
 
-<div class="divMarcas">
+<div class="divMarcas" id="marcas">
   <div class="divMarcasSize">
     <h2>Marcas</h2>
       <div class="marcasColumn">

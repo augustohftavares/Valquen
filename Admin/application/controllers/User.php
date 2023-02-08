@@ -11,7 +11,7 @@ class User extends CI_Controller {
 
 	public function index() {
 		$data['title'] = "Valquen - Utilizadores";
-		$users = $this->user_model->GetAll('username');
+		$users = $this->user_model->GetAll('name');
 		$data['user'] = $this->user_model->Modelar($users);
 		$this->load->view('User/index', $data);
 	}//end index
@@ -56,8 +56,7 @@ class User extends CI_Controller {
 				$this->session->set_flashdata('success', '<script>userUpdatedSuccess();</script>');
 				redirect(base_url("utilizadores"), 'refresh');
 			}
-		} else
-			$this->session->set_flashdata('error',validation_errors('<p class="validationErrors">* ','</p>'));
+		}
 	}//end update
 
 	private function Validation($operacao = 'insert'){
@@ -65,13 +64,18 @@ class User extends CI_Controller {
 		switch($operacao){
 			case 'update':
 			case 'insert':
-				$rules['username'] = array('trim', 'required', 'min_length[3]');
+			$rules['name'] = array('trim', 'required', 'min_length[3]');
+			$rules['surname'] = array('trim', 'required', 'min_length[3]');
+			$rules['email'] = array('trim', 'required', 'min_length[3]');
+			$rules['phone'] = array('trim');
 				break;
 			default:
 				break;
 		}
-
-		$this->form_validation->set_rules('username', 'username', $rules['username']);
+		$this->form_validation->set_rules('name', 'Nome', $rules['name']);
+		$this->form_validation->set_rules('surname', 'Apelido', $rules['surname']);
+		$this->form_validation->set_rules('email', 'Endereço de e-mail', $rules['email']);
+		$this->form_validation->set_rules('phone', 'Telemóvel', $rules['phone']);
 		return $this->form_validation->run();
 	}//end Validation
 

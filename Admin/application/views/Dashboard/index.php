@@ -18,32 +18,32 @@ $this->load->view('comuns/menu');
 -->
 
 <main class="page-content">
-  <div class="card">
+  <div class="card-dashboard">
     <div class="content">
       <h2 class="title">Utilizadores</h2>
-      <p class="copy">A Valquen tem um total de X utilizadores</p>
+      <p class="copy">A Valquen tem um total de <?php echo $usersTotal; ?> utilizadores</p>
       <button class="btn">Ver</button>
     </div>
   </div>
-  <div class="card">
+  <div class="card-dashboard ">
     <div class="content">
       <h2 class="title">Produtos</h2>
-      <p class="copy">A Valquen tem um total de X produtos</p>
-      <button class="btn">View Trips</button>
+      <p class="copy">A Valquen tem um total de <?php echo $productsTotal; ?> produtos</p>
+      <button class="btn">Ver</button>
     </div>
   </div>
-  <div class="card">
+  <div class="card-dashboard">
     <div class="content">
       <h2 class="title">Sessões</h2>
       <p class="copy">A Valquen tem um total de X sessões</p>
-      <button class="btn">Book Now</button>
+      <button class="btn">Ver</button>
     </div>
   </div>
-  <div class="card">
+  <div class="card-dashboard">
     <div class="content">
-      <h2 class="title">Explore The Galaxy</h2>
-      <p class="copy">Seriously, straight up, just blast off into outer space today</p>
-      <button class="btn">Book Now</button>
+      <h2 class="title">Manutenção</h2>
+      <p class="copy">Lorem Ipsum blablabla</p>
+      <button class="btn">Ver</button>
     </div>
   </div>
 </main>

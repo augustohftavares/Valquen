@@ -7,37 +7,54 @@ $this->load->view('comuns/header');
 $this->load->view('comuns/menu');
 ?>
 
-<!-- CONTENT HERE-->
+<div class="card-edit-user">
 
-  <div class="mainEdit">
-
-    <p class="sign" align="center">Editar Utilizador #<?php echo $user['id']?></p>
-
-    <form class="formAuth" action="<?php echo base_url("editar_utilizador_") ?>" method="post">
-
-      <label class="formLabel" for="username">Utilizador:</label>
-      <input class="userEmailAuth" type="text" align="center" name="username" value="<?php echo $user['username'] ?>" placeholder="Utilizador">
-
-      <label class="formLabel" for="email">Email:</label>
-      <input class="passAuth" type="text" align="center" name="email" value="<?php echo $user['email'] ?>" placeholder="email">
-
-      <label class="formLabel" for="phone">Telemóvel:</label>
-      <input class="passAuth" type="text" align="center" name="phone" value="<?php echo $user['phone'] ?>" placeholder="email">
-
-      <label class="formLabel" for="profileTitle">Títudo do perfil:</label>
-      <input class="passAuth" type="text" align="center" name="profileTitle" value="<?php echo $user['profileTitle'] ?>" placeholder="título do perfil">
-
-      <label class="formLabel" for="profileDesc">Descrição do perfil:</label>
-      <textarea class="passAuth" type="text" align="center" name="profileDesc" value="<?php echo $user['profileDesc'] ?>" placeholder="descrição do perfil"><?php echo $user['profileDesc'] ?></textarea>
-
-      <label class="formLabel" for="cod_postal">Código Postal:</label>
-      <input class="passAuth" type="text" align="center" name="cod_postal" value="<?php echo $user['cod_postal'] ?>" placeholder="código postal">
-
-      <input type="hidden" name="id" value="<?php echo $user['id']?>" />
-
-      <button class="submitAuth linkAuth" type="submit" align="center">Atualizar</button>
-
+  <div class="card-image">
+    <h2 class="card-heading">
+      Editar utilizador
+      <small>
+        <?php
+          if($this->session->flashdata('error') == TRUE)
+            echo $this->session->flashdata('error');
+        ?>
+      </small>
+    </h2>
   </div>
+
+  <form class="card-form" action="<?php echo base_url("editar_utilizador_") ?>" method="post">
+
+    <input type="hidden" name="id" value="<?php echo $user['id']?>" />
+
+    <div class="input">
+      <input type="text" class="input-field" name="name" value="<?php echo $user['name'] ?>" />
+      <label class="input-label" for="name">Nome</label>
+    </div>
+
+    <div class="input">
+      <input type="text" class="input-field" name="surname" value="<?php echo $user['surname'] ?>" />
+      <label class="input-label" for="surname">Apelido</label>
+    </div>
+
+    <div class="input">
+      <input type="text" class="input-field" name="email" value="<?php echo $user['email'] ?>"/>
+      <label class="input-label" for="email">Endereço de e-mail</label>
+    </div>
+
+    <div class="input">
+      <input type="text" class="input-field" name="phone" value="<?php echo $user['phone'] ?>"/>
+      <label class="input-label" for="phone">Telemóvel</label>
+    </div>
+
+    <div class="action">
+      <button class="action-button">Guardar Alterações</button>
+    </div>
+
+  </form>
+
+  <div class="card-info">
+    <p>Esta operação deverá ser feita apenas com o consentimento do utilizador.</p>
+  </div>
+</div>
 
 <?php
 $this->load->view('comuns/footer');

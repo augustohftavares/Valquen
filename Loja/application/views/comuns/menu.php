@@ -16,15 +16,20 @@
 
           <li class="navbar__link after-transform dropdown">
               <a href=""><i class='bx bxs-user'></i></a>
+
               <div class="dropdown-content">
 
-                <?php if(!isset($this->session->userdata['userinfo']['logged_in']) || $this->session->userdata['userinfo']['logged_in'] == FALSE ): ?>
+                <?php if(!isset($this->session->userdata['userinfo']['logged_in']) || $this->session->userdata['userinfo']['logged_in'] == FALSE): ?>
                   <a href="<?php echo base_url("iniciar_sessao") ?>">Iniciar Sessão <i class='bx bx-chevron-right'></i></a>
-                <?php else: ?>
+                <?php endif; ?>
+
+                <?php if(isset($this->session->userdata['userinfo']['logged_in']) && $this->session->userdata['userinfo']['logged_in'] == TRUE): ?>
                   <a href="<?php echo base_url("perfil") ?>">Perfil <i class='bx bx-chevron-right'></i></a>
                   <a href="<?php echo base_url("terminar_sessao") ?>">Terminar Sessão <i class='bx bx-chevron-right'></i></a>
                 <?php endif; ?>
+                
               </div>
+
           </li>
 
           <li class="navbar__link after-transform dropdown">
@@ -44,7 +49,7 @@
           <li class="navbar__link after-transform"><a href="<?php echo base_url("")?>">Promoções</a></li>
           <li class="navbar__link after-transform"><a href="<?php echo base_url("")?>">Homem</a></li>
           <li class="navbar__link after-transform"><a href="<?php echo base_url("")?>">Mulher</a></li>
-          <li class="navbar__link after-transform"><a href="<?php echo base_url("")?>">Marcas</a></li>
+          <li class="navbar__link after-transform"><a href="#marcas">Marcas</a></li>
           <li class="navbar__link after-transform"><a href="<?php echo base_url("atendimento_ao_cliente")?>">Atendimento ao Cliente</a></li>
         </ul>
       </nav>

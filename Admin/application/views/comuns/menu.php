@@ -2,8 +2,8 @@
 <nav class="main-menu">
   <ul>
     <li>
-      <a href="https://jbfarrow.com">
-        <i class="fa fa-instagram" aria-hidden="true"></i>
+      <a href="<?php echo base_url("dashboard") ?>">
+        <i class="fa fa-tachometer" aria-hidden="true"></i>
         <span class="nav-text">
           Dashboard
         </span>
@@ -11,8 +11,8 @@
 
     </li>
     <li class="has-subnav">
-      <a href="#">
-        <i class="fa fa-globe fa-2x"></i>
+      <a href="<?php echo base_url("utilizadores") ?>">
+        <i class="fa fa-users" aria-hidden="true"></i>
         <span class="nav-text">
           Utilizadores
         </span>
@@ -20,8 +20,8 @@
 
     </li>
     <li class="has-subnav">
-      <a href="#">
-        <i class="fa fa-comments fa-2x"></i>
+      <a href="<?php echo base_url("produtos") ?>">
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
         <span class="nav-text">
           Produtos
         </span>
@@ -29,8 +29,8 @@
 
     </li>
     <li class="has-subnav">
-      <a href="#">
-        <i class="fa fa-camera-retro fa-2x"></i>
+      <a href="<?php echo base_url("") ?>">
+        <i class="fa fa-file" aria-hidden="true"></i>
         <span class="nav-text">
           Contatos
         </span>
@@ -38,8 +38,8 @@
 
     </li>
     <li>
-      <a href="#">
-        <i class="fa fa-film fa-2x"></i>
+      <a href="<?php echo base_url("criar_administrador") ?>">
+        <i class="fa fa-lock" aria-hidden="true"></i>
         <span class="nav-text">
           Criar administrador
         </span>
@@ -49,10 +49,10 @@
 
   <ul class="logout">
     <li>
-      <a href="#">
+      <a href="<?php echo base_url("terminar_sessao") ?>">
         <i class="fa fa-power-off fa-2x"></i>
         <span class="nav-text">
-          Logout
+          Terminar Sessão
         </span>
       </a>
     </li>

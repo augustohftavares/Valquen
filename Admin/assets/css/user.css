@@ -1,0 +1,252 @@
+/* INDEX PAGE */
+.userPageTitle {
+	color: gray;
+	margin-top: 30px;
+	text-align: center;
+	font-size: 25px;
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 800 !important;
+}
+
+.container-users {
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+}
+
+.container-users table {
+	width: 800px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+	margin: auto;
+	margin-top: 40px;
+	border-radius: 10px;
+	pointer-events: none;
+}
+
+.container-users th,
+.container-users td {
+	padding: 15px;
+	color: #fff;
+}
+
+.container-users td {
+	background-color: rgba(255, 255, 255, 0.2);
+	color: gray;
+}
+
+.container-users th {
+	text-align: left;
+}
+
+.container-users thead th {
+	background-color: #FF2E2E;
+}
+
+.container-users tbody tr:hover {
+	background-color: #F3F3F3;
+}
+
+.container-users tbody td {
+	position: relative;
+}
+
+.container-users tbody td:hover:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	z-index: -1;
+}
+
+.container-users tbody tr td i {
+	pointer-events: all;
+	color: red;
+}
+
+/* DETAILS PAGE */
+
+.card {
+  margin: 70px auto 200px;
+  width: 50%;
+	height: 500px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
+}
+.cover-bg {
+  width: 100%;
+  height: 120px;
+  background: #b4e2d6;
+  background: url('https://images.unsplash.com/photo-1504537103742-67c282f65f24?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1075&q=80') no-repeat center;
+  background-size: 260%;
+  border-radius: 5px 5px 0 0;
+}
+.user-info {
+  padding-left: 16px;
+  padding-top: 10px;
+}
+.user-info-wrap {
+  margin-top: -35px;
+  display: flex;
+  padding: 0 20px;
+}
+.user-name {
+  font-weight: 500;
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+  margin-top: -5px;
+}
+
+.user-title {
+  font-size: 16px;
+  font-weight: 200;
+  color: #8b8784;
+  display: block;
+  margin-top: 10px;
+}
+
+.user-photo {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+  background: #fff url('https://www.citypng.com/public/uploads/preview/profile-user-round-red-icon-symbol-download-png-11639594337tco5j3n0ix.png') no-repeat center;
+  background-size: cover;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+}
+.user-bio {
+  padding: 20px;
+}
+.user-bio p {
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
+
+/* EDIT PAGE */
+.card-edit-user img {
+	max-width: 100%;
+	display: block;
+}
+
+.card-edit-user input {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border-radius: 0;
+}
+
+.card-edit-user {
+	margin: 2rem auto;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 425px;
+	background-color: #FFF;
+	border-radius: 10px;
+	box-shadow: 0 10px 20px 0 rgba(153, 153, 153, 0.25);
+	padding: 0.75rem;
+	margin-top: 150px;
+}
+
+.card-image {
+	border-radius: 8px;
+	padding-bottom: 50px;;
+	background-repeat: no-repeat;
+	position: relative;
+	margin-left: -25px;
+}
+
+.card-heading {
+	position: absolute;
+	left: 10%;
+	top: 15%;
+	right: 10%;
+	font-size: 1.75rem;
+	font-weight: 700;
+	color: #FF2E2E;
+	line-height: 1.222;
+}
+.card-heading small {
+	display: block;
+	font-size: 0.75em;
+	font-weight: 400;
+	margin-top: 0.25em;
+}
+
+.card-form {
+	padding: 2rem 1rem 0;
+}
+
+.input {
+	display: flex;
+	flex-direction: column-reverse;
+	position: relative;
+	padding-top: 1.5rem;
+}
+.input + .input {
+	margin-top: 1.5rem;
+}
+
+.input-label {
+	color: #FF2E2E;
+	position: absolute;
+	top: 1.5rem;
+	transition: 0.25s ease;
+}
+
+.input-field {
+	border: 0;
+	z-index: 1;
+	background-color: transparent;
+	border-bottom: 2px solid #eee;
+	font: inherit;
+	font-size: 1.125rem;
+	padding: 0.25rem 0;
+}
+
+.input-field:focus, .input-field:valid {
+	outline: 0;
+	border-bottom-color: #FF2E2E;
+}
+
+.input-field:focus + .input-label, .input-field:valid + .input-label {
+	color: #FF2E2E;
+	transform: translateY(-1.5rem);
+}
+
+.action {
+	margin-top: 2rem;
+}
+
+.action-button {
+	font: inherit;
+	font-size: 1.25rem;
+	padding: 10px;
+	width: 100%;
+	font-weight: 500;
+	background-color: #FF2E2E;
+	border-radius: 6px;
+	color: #FFF;
+	border: 0;
+}
+.action-button:focus {
+	outline: 0;
+}
+
+.action-button:hover{opacity: 0.9}
+
+.card-info {
+	padding: 1rem 1rem;
+	text-align: center;
+	font-size: 0.875rem;
+	color: #8597a3;
+}

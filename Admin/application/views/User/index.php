@@ -7,55 +7,52 @@ $this->load->view('comuns/header');
 $this->load->view('comuns/menu');
 ?>
 
-<!-- CONTENT HERE-->
-  <!-- SUCCESS MESSAGES -->
-  <?php
-		if($this->session->flashdata('success') == true)
-			echo $this->session->flashdata('success');
-	?>
+<?php
+  if($this->session->flashdata('success') == true)
+    echo $this->session->flashdata('success');
+?>
 
-  <div style="">
+<h1 class="userPageTitle">Lista de utilizadores</h1>
 
-    <h1 class="userPageTitle">Lista de todos os utilizadores registados</h1>
+<div class="container-users">
 
-    <table class="tableList">
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Apelido</th>
+        <th>Email</th>
+        <th>Telemóvel</th>
+        <th>Registo</th>
+        <th></th>
+      </tr>
+    </thead>
 
-      <thead>
+    <tbody>
+      <?php foreach($user as $row): ?>
+
+        <?php
+          // DATE FORMAT
+          $date = $row['createdAt'];
+          $convertDate = date("d/m/Y", strtotime($date));
+        ?>
         <tr>
-          <th></th>
-          <th><i class='bx bxs-user'></i> Utilizador</th>
-          <th><i class='bx bxs-envelope'></i> Email</th>
-          <th><i class='bx bxs-phone'></i> Telemóvel</th>
-          <th><i class='bx bx-barcode'></i> Código Postal</th>
-          <th><i class='bx bxs-time'></i> Registado a</th>
-          <th></th>
+          <td><?php echo $row['name']?></td>
+          <td><?php echo $row['surname']?></td>
+          <td><?php echo $row['email']?></td>
+          <td><?php echo $row['phone']?></td>
+          <td><?php echo $convertDate ?></td>
+          <td>
+            <a href="<?php echo $row['edit_url'] ?>"><i class='bx bxs-edit'></i></a>
+            <a href="<?php echo $row['detail_url'] ?>"><i class='bx bxs-user-detail'></i></a>
+          </td>
         </tr>
-      </thead>
+      <?php endforeach; ?>
+    </tbody>
 
-      <tbody>
-        <?php foreach($user as $row): ?>
-          <?php
-						// DATE FORMAT
-						$date = $row['createdAt'];
-						$convertDate = date("d/m/Y", strtotime($date));
-					?>
-          <tr>
-            <td>#<?php echo $row['id']?></td>
-            <td><?php echo $row['username']?></td>
-            <td><?php echo $row['email']?></td>
-            <td><?php echo $row['phone']?></td>
-            <td><?php echo $row['cod_postal']?></td>
-            <td><?php echo $convertDate ?></td>
-            <td>
-              <a href="<?php echo $row['edit_url'] ?>"><i class='bx bxs-edit'></i></a>
-              <a href="<?php echo $row['detail_url'] ?>"><i class='bx bxs-user-detail'></i></a>
-            </td>
-          </tr>
-        <?php endforeach; ?>
-      </tbody>
+  </table>
 
-    </table>
-  </div>
+</div>
 
 
 <?php

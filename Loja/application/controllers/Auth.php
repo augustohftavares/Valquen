@@ -17,7 +17,7 @@ class Auth extends CI_Controller {
 	public function log() {
 		$data['title'] = "Valquen - Iniciar Sessão";
 
-		if(!isset($this->session->userdata['userinfo']['logged_in']) || $this->session->userdata['userinfo']['logged_in'] == TRUE )
+		if(isset($this->session->userdata['userinfo']['logged_in']) && $this->session->userdata['userinfo']['logged_in'] == TRUE)
 			redirect(base_url(""), 'refresh');
 
 		$this->load->view('Auth/login', $data);
@@ -36,8 +36,9 @@ class Auth extends CI_Controller {
 		if(is_null($id))
 			redirect(base_url("iniciar_sessao"), 'refresh');
 
-		if(!isset($this->session->userdata['userinfo']['logged_in']) || $this->session->userdata['userinfo']['logged_in'] == FALSE )
+		if(!isset($this->session->userdata['userinfo']['logged_in']) || isset($this->session->userdata['userinfo']['logged_in']) && $this->session->userdata['userinfo']['logged_in'] == FALSE)
 			redirect(base_url("iniciar_sessao"), 'refresh');
+
 
 		$data['userprofile'] = $this->auth_model->GetById($id);
 
